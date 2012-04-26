@@ -20,7 +20,7 @@ Lensesly::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
-  config.assets.precompile = ['*.js', '*.css', '*.png', '*.jpg', '*.jpeg', '*.gif']
+#  config.assets.precompile = ['*.js', '*.css', '*.png', '*.jpg', '*.jpeg', '*.gif']
 
   
   # Defaults to Rails.root.join("public/assets")

@@ -30,7 +30,6 @@ set :normalize_asset_timestamps, false
 $:.unshift(File.expand_path('./lib', ENV['rvm_path']))
 
 require "rvm/capistrano"
-#require "bundler/capistrano"
 
 # Set ruby version for rvm
 #set :rvm_ruby_string, '1.9.2-p290'
@@ -53,7 +52,7 @@ namespace :deploy do
   end
 
   task :pipeline_precompile do
-    run "cd #{release_path}; RAILS_ENV=production bundle exec rake assets:precompile --trace"
+    run "cd #{release_path}; RAILS_ENV=production bundle exec rake assets:precompile"
   end
 
   task :set_rights do 
