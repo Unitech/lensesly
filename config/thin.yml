@@ -1,4 +1,4 @@
-pid: pids/thin.pid
+pid: /var/www/lensesly/shared/pids/thin.pid
 address: 0.0.0.0
 timeout: 30
 wait: 30
