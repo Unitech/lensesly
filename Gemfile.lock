@@ -1,4 +1,12 @@
 GIT
+  remote: https://github.com/Alexandre-Strzelewicz/spree_static_content.git
+  revision: 8052c7b825910eff8760888093f5acaa39b002e4
+  specs:
+    spree_static_content (1.1.0.beta)
+      spree_auth (~> 1.1.0.beta)
+      spree_core (~> 1.1.0.beta)
+
+GIT
   remote: https://github.com/gudata/spree_wishlist
   revision: 353299297b0ad9e63cdf5b7fc2c8210d2ee160ae
   specs:
@@ -20,13 +28,6 @@ GIT
   specs:
     spree_i18n (1.0.0)
       spree_core (>= 0.30.0)
-
-PATH
-  remote: lib/
-  specs:
-    spree_static_content (1.1.0.beta)
-      spree_auth (~> 1.1.0.beta)
-      spree_core (~> 1.1.0.beta)
 
 GEM
   remote: https://rubygems.org/
