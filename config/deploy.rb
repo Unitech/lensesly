@@ -40,11 +40,11 @@ namespace :deploy do
 
   desc "Start thin"
   task :start do
-#    run "cd #{release_path}; bundle exec thin start -C config/thin.yml"
+    run "cd #{release_path}; bundle exec thin start -C config/thin.yml"
   end
   
   task :stop do
- #   run "cd #{release_path}; bundle exec thin stop -C config/thin.yml"
+    run "cd #{release_path}; bundle exec thin stop -C config/thin.yml"
   end
 
   task :migrate do
