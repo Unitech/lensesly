@@ -8,7 +8,7 @@ gem 'sqlite3'
 gem 'spree', '1.1.0.rc2'
 
 #rails g spree_static_content:install
-gem 'spree_static_content', :git => 'https://github.com/spree/spree_static_content.git'
+gem 'spree_static_content', :path => 'lib/'
 
 # rails g spree_editor:install
 gem 'spree_editor', :git => 'https://github.com/spree/spree_editor.git'
