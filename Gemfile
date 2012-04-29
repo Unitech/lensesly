@@ -9,20 +9,21 @@ gem 'spree', '1.1.0.rc2'
 
 gem 'rails-i18n'
 
-#rails g spree_static_content:install
+
 gem 'spree_static_content', :git => 'https://github.com/Alexandre-Strzelewicz/spree_static_content.git'
-
-# rails g spree_editor:install
 gem 'spree_editor', :git => 'https://github.com/spree/spree_editor.git'
-
 gem 'tinymce-rails', '>= 3.4.7.0.1'
 
-# gem 'spree_print_invoice' , :git => 'https://github.com/spree/spree_print_invoice.git'
+gem 'spree_related_products', :git => 'git://github.com/spree/spree_related_products.git'
 
-#gem 'spree_i18n', :git => 'https://github.com/spree/spree_i18n.git'
-
-# rails g spree_wishlist:install
 gem 'spree_wishlist', :git => 'https://github.com/gudata/spree_wishlist'
+
+
+# gem 'spree_print_invoice' , :git => 'https://github.com/spree/spree_print_invoice.git'
+# gem 'spree_i18n', :git => 'https://github.com/spree/spree_i18n.git'
+# rails g spree_wishlist:install
+
+
 
 # Gems used only for assets and not required
 # in production environments by default.

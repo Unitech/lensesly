@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/spree/spree_related_products.git
+  revision: 185416b323e98e671ae65b583cc4cefe82884e04
+  specs:
+    spree_related_products (3.2)
+      spree_core (~> 1.1.0.rc2)
+      spree_promo (~> 1.1.0.rc2)
+
+GIT
   remote: https://github.com/Alexandre-Strzelewicz/spree_static_content.git
   revision: 8052c7b825910eff8760888093f5acaa39b002e4
   specs:
@@ -269,6 +277,7 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   spree (= 1.1.0.rc2)
   spree_editor!
+  spree_related_products!
   spree_static_content!
   spree_wishlist!
   sqlite3
