@@ -7,6 +7,8 @@ gem 'sqlite3'
 
 gem 'spree', '1.1.0.rc2'
 
+gem 'rails-i18n'
+
 #rails g spree_static_content:install
 gem 'spree_static_content', :git => 'https://github.com/Alexandre-Strzelewicz/spree_static_content.git'
 
