@@ -1,0 +1,27 @@
+<%= csrf_meta_tags %>
+<div class="order-links" data-hook="admin_order_edit_buttons">
+  <div class="toolbar">
+    <%= event_links %>
+  </div>
+  <div class="toolbar">
+    <%= button_link_to t(:resend), resend_admin_order_url(@order), :method => :post, :icon => 'send-email' if @order.user %>
+  </div>
+</div>
+
+<%= render :partial => 'spree/admin/shared/order_tabs', :locals => { :current => 'Order Details' } %>
+
+<div data-hook="admin_order_edit_header">
+  <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @order } %>
+</div>
+
+<%= render :partial => 'add_product' %>
+
+<div data-hook="admin_order_edit_form">
+  <div id="order-form-wrapper">
+    <%= render :partial => 'form', :locals => { :order => @order } %>
+  </div>
+</div>
+
+<% content_for :head do %>
+  <%= javascript_tag 'var expand_variants = true;' %>
+<% end %>

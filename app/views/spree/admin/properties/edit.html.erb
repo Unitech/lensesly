@@ -1,0 +1,10 @@
+<%= render :partial => 'spree/admin/shared/product_sub_menu' %>
+
+<h1><%= t(:editing_property) %></h1>
+
+<%= render :partial => 'spree/shared/error_messages', :locals => { :target => @property } %>
+
+<%= form_for [:admin, @property] do |f| %>
+  <%= render :partial => 'form', :locals => { :f => f } %>
+  <%= render :partial => 'spree/admin/shared/edit_resource_links' %>
+<% end %>

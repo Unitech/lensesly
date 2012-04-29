@@ -1,0 +1,60 @@
+<meta charset="utf-8">
+
+<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+<title><%= title %></title>
+
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1" name="viewport">
+
+<!-- Robots -->
+<meta name="robots" content="INDEX, FOLLOW ALL">
+
+<!-- <base href="http://p3ee.com"> -->
+<meta name="revisit-after" content="2 days">
+<meta name="Date-Creation-yyyymmdd" content="<%= Time.now.strftime("%Y%m%d") %>">
+<meta name="Date-Revision-yyyymmdd" content="<%= Time.now.strftime("%Y%m%d") %>">
+
+<meta name="robots" content="all">
+<meta name="language" content="fr">
+
+<!-- FACEBOOK -->
+
+<!-- <meta property="og:type" content="website"> -->
+<!-- <meta property="og:site_name" content="CDiscount"> -->
+<!-- <meta property="og:url" content="http://www.cdiscount.com"> -->
+<!-- <meta property="og:title" content="CDiscount, N°1 du e-commerce en France !"> -->
+<!-- <meta property="og:description" content="Achat sur Internet a prix discount de DVD et de produits culturels (livre et musique), informatiques et high Tech (image et son, televiseur LCD, ecran plasma, telephone portable, camescope, developpement photo numerique). Achat d electromenager et de petit electromenager. Vente de pret-a-porter pour homme et femme."> -->
+
+<!-- <meta property="og:image" content="http://i4.cdscdn.com/struct/i1/common/logo_cdiscount.png"><meta property="og:locale" content="fr_FR"> -->
+
+
+<!-- <meta property="fb:app_id" content="200380353339459"> -->
+<!-- <meta property="fb:admins" content="100002498063855,740204880,100000049650225"> -->
+
+<!-- <meta name="application-name" content="Cdiscount"> -->
+<!-- <meta name="msapplication-tooltip" content="Démarrer l'application"> -->
+<!-- <meta name="msapplication-window" content="width=800;height=600"> -->
+<!-- <meta name="msapplication-navbutton-color" content="orange"> -->
+
+
+
+
+
+<%== meta_data_tags %>
+
+<%= favicon_link_tag image_path('favicon.ico') %>
+
+<%= stylesheet_link_tag 'store/all', :media => 'screen' %>
+
+<%= csrf_meta_tags %>
+<%= javascript_include_tag 'store/all' %>
+
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<%= yield :head %>
+
+

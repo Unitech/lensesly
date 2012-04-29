@@ -1,0 +1,15 @@
+Dear Customer,
+
+Your order has been shipped
+
+============================================================
+Shipment Summary
+============================================================
+<% @shipment.line_items.each do |item| %>
+<%= item.variant.sku %> <%= item.variant.product.name %> <%= variant_options(item.variant) %> (<%= item.quantity %>)
+<% end %>
+============================================================
+
+<%= "Tracking Information: #{@shipment.tracking}" if @shipment.tracking %>
+
+Thank you for your business.

@@ -17,7 +17,7 @@ gem 'tinymce-rails', '>= 3.4.7.0.1'
 
 # gem 'spree_print_invoice' , :git => 'https://github.com/spree/spree_print_invoice.git'
 
-gem 'spree_i18n', :git => 'https://github.com/spree/spree_i18n.git'
+#gem 'spree_i18n', :git => 'https://github.com/spree/spree_i18n.git'
 
 # rails g spree_wishlist:install
 gem 'spree_wishlist', :git => 'https://github.com/gudata/spree_wishlist'
