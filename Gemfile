@@ -18,13 +18,9 @@ gem 'spree_related_products', :git => 'git://github.com/spree/spree_related_prod
 
 gem 'spree_wishlist', :git => 'https://github.com/gudata/spree_wishlist'
 
-#gem 'import_products', :git => 'git://github.com/joshmcarthur/spree-import-products.git'
-
 # gem 'spree_print_invoice' , :git => 'https://github.com/spree/spree_print_invoice.git'
 # gem 'spree_i18n', :git => 'https://github.com/spree/spree_i18n.git'
 # rails g spree_wishlist:install
-
-
 
 # Gems used only for assets and not required
 # in production environments by default.
