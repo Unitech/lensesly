@@ -61,3 +61,15 @@ namespace :deploy do
 
 end
 
+#
+# Remote console
+#
+desc "remotely console"
+task :console, :roles => :app do
+  input = ''
+  run "cd #{current_path} && rails console #{ENV['RAILS_ENV']}" do |channel, stream, data|
+    next if data.chomp == input.chomp || data.chomp == ''
+    print data
+    channel.send_data(input = $stdin.gets) if data =~ /:\d{3}:\d+(\*|>)/
+  end
+end
