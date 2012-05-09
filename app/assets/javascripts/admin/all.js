@@ -14,3 +14,4 @@
 
 //= require_tree .
 //= require admin/spree_editor
+//= require admin/spree_social

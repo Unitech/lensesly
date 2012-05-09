@@ -7,16 +7,18 @@ gem 'sqlite3'
 
 
 
-gem 'spree', '1.1.0.rc2'
+gem 'spree', '1.1.0'
 
 gem 'rails-i18n'
 
 gem 'spree_static_content', :git => 'https://github.com/Alexandre-Strzelewicz/spree_static_content.git'
 gem 'spree_editor', :git => 'https://github.com/spree/spree_editor.git'
 gem 'tinymce-rails', '>= 3.4.7.0.1'
-gem 'spree_related_products', :git => 'git://github.com/spree/spree_related_products.git'
+gem 'spree_related_products', :git => 'https://github.com/spree/spree_related_products.git'
 gem 'spree_wishlist', :git => 'https://github.com/gudata/spree_wishlist'
+#gem 'spree_sitemap_generator', :git => 'https://github.com/jdutil/spree-sitemap-generator.git'
 
+gem 'spree_social', :git => 'https://github.com/spree/spree_social.git'
 
 #
 # SEO

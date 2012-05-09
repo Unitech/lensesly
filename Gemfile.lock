@@ -1,12 +1,4 @@
 GIT
-  remote: git://github.com/spree/spree_related_products.git
-  revision: 185416b323e98e671ae65b583cc4cefe82884e04
-  specs:
-    spree_related_products (3.2)
-      spree_core (~> 1.1.0.rc2)
-      spree_promo (~> 1.1.0.rc2)
-
-GIT
   remote: https://github.com/Alexandre-Strzelewicz/spree_static_content.git
   revision: 8052c7b825910eff8760888093f5acaa39b002e4
   specs:
@@ -24,11 +16,32 @@ GIT
 
 GIT
   remote: https://github.com/spree/spree_editor.git
-  revision: 309d88dfd80d80c478e25f453367889faafaac22
+  revision: ca40a901ddb6587c850b626449af6aa001de8ce0
   specs:
     spree_editor (1.0.0)
       spree_core (>= 1.0.0)
       tinymce-rails (>= 3.4.7.0.1)
+
+GIT
+  remote: https://github.com/spree/spree_related_products.git
+  revision: 72cbbfc9ed311d711ec2d0d4cae0c1263c5fdaae
+  specs:
+    spree_related_products (3.2)
+      spree_core (~> 1.1.0)
+      spree_promo (~> 1.1.0)
+
+GIT
+  remote: https://github.com/spree/spree_social.git
+  revision: 35601cdf2066386546c400a5ed98c0c5045f1a13
+  specs:
+    spree_social (2.1.0)
+      oa-core
+      omniauth
+      omniauth-facebook
+      omniauth-github
+      omniauth-twitter
+      spree_auth (~> 1.1.0)
+      spree_core (~> 1.1.0)
 
 GEM
   remote: https://rubygems.org/
@@ -108,20 +121,24 @@ GEM
       warden (~> 1.1.1)
     erubis (2.7.0)
     eventmachine (0.12.10)
-    execjs (1.3.1)
+    execjs (1.3.2)
       multi_json (~> 1.0)
+    faraday (0.8.0)
+      multipart-post (~> 1.1)
     ffaker (1.12.1)
+    hashie (1.2.0)
     highline (1.6.11)
     hike (1.2.1)
     httparty (0.8.3)
       multi_json (~> 1.0)
       multi_xml
+    httpauth (0.1)
     i18n (0.6.0)
     journey (1.0.3)
     jquery-rails (2.0.2)
       railties (>= 3.2.0, < 5.0)
       thor (~> 0.14)
-    json (1.6.6)
+    json (1.7.1)
     kaminari (0.13.0)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -133,8 +150,9 @@ GEM
     mime-types (1.18)
     money (3.7.1)
       i18n (~> 0.4)
-    multi_json (1.3.2)
-    multi_xml (0.4.4)
+    multi_json (1.3.4)
+    multi_xml (0.5.0)
+    multipart-post (1.1.5)
     mysql2 (0.3.11)
     nested_set (1.7.0)
       activerecord (>= 3.0.0)
@@ -147,6 +165,29 @@ GEM
     net-ssh-gateway (1.1.0)
       net-ssh (>= 1.99.1)
     nokogiri (1.5.2)
+    oa-core (0.3.2)
+    oauth (0.4.6)
+    oauth2 (0.6.1)
+      faraday (~> 0.7)
+      httpauth (~> 0.1)
+      multi_json (~> 1.3)
+    omniauth (1.1.0)
+      hashie (~> 1.2)
+      rack
+    omniauth-facebook (1.3.0)
+      omniauth-oauth2 (~> 1.0.2)
+    omniauth-github (1.0.1)
+      omniauth (~> 1.0)
+      omniauth-oauth2 (~> 1.0)
+    omniauth-oauth (1.0.1)
+      oauth
+      omniauth (~> 1.0)
+    omniauth-oauth2 (1.0.2)
+      oauth2 (~> 0.6.0)
+      omniauth (~> 1.0)
+    omniauth-twitter (0.0.11)
+      multi_json (~> 1.3)
+      omniauth-oauth (~> 1.0)
     orm_adapter (0.0.7)
     paperclip (2.7.0)
       activerecord (>= 2.3.0)
@@ -190,29 +231,29 @@ GEM
       polyamorous (~> 0.5.0)
     rdoc (3.12)
       json (~> 1.4)
-    sass (3.1.16)
+    sass (3.1.17)
     sass-rails (3.2.5)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
-    spree (1.1.0.rc2)
-      spree_api (= 1.1.0.rc2)
-      spree_auth (= 1.1.0.rc2)
-      spree_cmd (= 1.1.0.rc2)
-      spree_core (= 1.1.0.rc2)
-      spree_dash (= 1.1.0.rc2)
-      spree_promo (= 1.1.0.rc2)
-      spree_sample (= 1.1.0.rc2)
-    spree_api (1.1.0.rc2)
+    spree (1.1.0)
+      spree_api (= 1.1.0)
+      spree_auth (= 1.1.0)
+      spree_cmd (= 1.1.0)
+      spree_core (= 1.1.0)
+      spree_dash (= 1.1.0)
+      spree_promo (= 1.1.0)
+      spree_sample (= 1.1.0)
+    spree_api (1.1.0)
       rabl (= 0.6.5)
-      spree_auth (= 1.1.0.rc2)
-      spree_core (= 1.1.0.rc2)
-    spree_auth (1.1.0.rc2)
+      spree_auth (= 1.1.0)
+      spree_core (= 1.1.0)
+    spree_auth (1.1.0)
       cancan (= 1.6.7)
       devise (~> 2.0)
-      spree_core (= 1.1.0.rc2)
-    spree_cmd (1.1.0.rc2)
-    spree_core (1.1.0.rc2)
+      spree_core (= 1.1.0)
+    spree_cmd (1.1.0)
+    spree_core (1.1.0)
       activemerchant (= 1.20.4)
       acts_as_list (= 0.1.4)
       aws-sdk (~> 1.3.4)
@@ -227,15 +268,15 @@ GEM
       ransack (~> 0.6.0)
       state_machine (= 1.1.2)
       stringex (~> 1.3.2)
-    spree_dash (1.1.0.rc2)
+    spree_dash (1.1.0)
       httparty (~> 0.8.1)
-      spree_auth (= 1.1.0.rc2)
-      spree_core (= 1.1.0.rc2)
-    spree_promo (1.1.0.rc2)
-      spree_auth (= 1.1.0.rc2)
-      spree_core (= 1.1.0.rc2)
-    spree_sample (1.1.0.rc2)
-      spree_core (= 1.1.0.rc2)
+      spree_auth (= 1.1.0)
+      spree_core (= 1.1.0)
+    spree_promo (1.1.0)
+      spree_auth (= 1.1.0)
+      spree_core (= 1.1.0)
+    spree_sample (1.1.0)
+      spree_core (= 1.1.0)
     sprockets (2.1.3)
       hike (~> 1.2)
       rack (~> 1.0)
@@ -273,9 +314,10 @@ DEPENDENCIES
   rails (= 3.2.3)
   rails-i18n
   sass-rails (~> 3.2.3)
-  spree (= 1.1.0.rc2)
+  spree (= 1.1.0)
   spree_editor!
   spree_related_products!
+  spree_social!
   spree_static_content!
   spree_wishlist!
   sqlite3
