@@ -9,6 +9,8 @@ fr:
   account: Compte
   account_updated: "Compte mis à jour!"
   action: Action
+  under_price : Les moins chères
+  or_over_price : Les plus belles
   actions: 
     cancel: Annuler
     create: Créer
@@ -326,7 +328,7 @@ fr:
   confirm_delete: "Confirmation de la suppression"
   confirm_password: "Confirmation du mot de passe"
   continue: Continuer
-  continue_shopping: "Continuer vos achats"
+  continue_shopping: "Continuer mes achats"
   copy_all_mails_to: "Envoyer une copie des emails aux adresses suivantes"
   cost_price: "Prix de revient"
   count: Quantité
@@ -1083,4 +1085,5 @@ fr:
       last : Fin
       previous : Précédent
       first: Début
+      truncate : ...
 
