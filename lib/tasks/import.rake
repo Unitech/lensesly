@@ -24,15 +24,51 @@ namespace :spree do
   desc "Update / Import products from CSV File, expects file=/path/to/import.csv"
   task :import_products => :environment do
     require 'csv'
-    
-    CSV.foreach("#{Rails.root}/products.csv", {:col_sep => ";"}) do |row|
 
-      puts row[2]
+    puts "Deleting"
 
-      image = row[2].split(' - ', 2)[1].strip.gsub('/', '') + '.png';
-      path = "#{Rails.root}/images/" + image;
+    Spree::Product.all.each do |p|
+      p.delete
+    end
 
-      if File.exist?(path) and (row[43] == 'femme' || row[43] == 'homme, femme')
+    Spree::Taxonomy.all.each do |p|
+      p.delete
+    end
+
+    Spree::Taxon.all.each do |p|
+      p.delete
+    end
+
+    puts "Creating Taxonomy"
+
+
+    categories = Hash.new
+
+    taxonomy = Spree::Taxonomy.create(:name => 'Categories')
+    taxon_last_id = Spree::Taxon.last.id
+
+    CSV.foreach("#{Rails.root}/lib/data/categories.csv", {:col_sep => ";"}) do |row|
+      taxon = Spree::Taxon.create(:parent_id => taxon_last_id, :name => row[2])
+      categories.merge!({row[0] => {"name" => row[2], "taxon" => taxon}})
+    end
+
+    puts categories
+    puts "Creating product"
+
+    CSV.foreach("#{Rails.root}/lib/data/products.csv", {:col_sep => ";"}) do |row|
+
+      #puts row[2].split(' - ', 2)[1].gsub('/', '')
+      next if row[2].nil?
+
+      tmp = row[2].split(' - ', 2)[1].gsub('/', '') + '.png'
+
+      puts tmp
+      image = tmp
+
+      #path = "#{Rails.root}/images/" + image;
+
+      # if File.exist?(path) and (row[43] == 'femme' || row[43] == 'homme, femme')
+      if (row[43] == 'femme' || row[43] == 'homme, femme')
         
         prod = Spree::Product.new :meta_keywords => row[23],
              :name => row[2],
@@ -44,8 +80,17 @@ namespace :spree do
         
         prod.save
         prod_v = Spree::Variant.last
+                  prod.taxons << categories[row[3]]["taxon"]
+        begin
+
+          puts "=-===================== > Success !"
+        rescue
+          prod.taxons << categories[row[47]]["taxon"]
+        end
+
+        prod_v.save
         
-        prod_v.images << Spree::Image.create(:attachment => File.open("#{Rails.root}/images/" + image), :alt => row[2])
+        # prod_v.images << Spree::Image.create(:attachment => File.open("#{Rails.root}/images/" + image), :alt => row[2])
       end
       
       
@@ -73,6 +118,8 @@ namespace :spree do
       # row[2] useless
       
     end
+
+    Spree::Taxon.all
     
   end
 end

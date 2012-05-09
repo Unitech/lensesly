@@ -10,6 +10,7 @@ gem 'spree', '1.1.0.rc2'
 gem 'rails-i18n'
 
 
+
 gem 'spree_static_content', :git => 'https://github.com/Alexandre-Strzelewicz/spree_static_content.git'
 gem 'spree_editor', :git => 'https://github.com/spree/spree_editor.git'
 gem 'tinymce-rails', '>= 3.4.7.0.1'
