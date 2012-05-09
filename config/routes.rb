@@ -6,6 +6,12 @@ Lensesly::Application.routes.draw do
   #
   # We ask that you don't use the :as option here, as Spree relies on it being the default of "spree"
   mount Spree::Core::Engine, :at => '/'
+
+
+  match '/test' => 'spree/products#test'
+
+  match '/test_taxon/*id' => 'spree/taxons#test'
+  
           # The priority is based upon order of creation:
   # first created -> highest priority.
 

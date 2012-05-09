@@ -6,7 +6,7 @@ module Spree
     attr_accessible :attachment, :alt, :viewable_id
 
     has_attached_file :attachment,
-                      :styles => { :mini => '48x48>', :small => '100x100>', :product => '240x240>', :large => '600x600>' },
+                      :styles => { :mini => '48x48>', :small => '100x100>', :product => '240x240>', :list => '400x400>', :large => '600x600>', :extralarge => '960x960>' },
                       :default_style => :product,
                       :url => '/system/products/:id/:style/:basename.:extension',
                       :path => ':rails_root/public/system/products/:id/:style/:basename.:extension'
