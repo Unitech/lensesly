@@ -1081,9 +1081,9 @@ fr:
   zones: Zones
   views:
     pagination:
-      next: Suivant
-      last : Fin
-      previous : Précédent
-      first: Début
+      next: Suivant ›
+      last : Fin »
+      previous : ‹ Précédent
+      first: « Début
       truncate : ...
 
