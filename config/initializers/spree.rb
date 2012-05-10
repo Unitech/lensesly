@@ -10,7 +10,7 @@ Spree.config do |config|
   # Uncomment to override the default site name.
   # config.site_name = "Spree Demo Site"
 #  config.set(:enabled_locales, ['en','es','fr', 'pt'])
-  
+  config.set(logo: "logo-450.png")  
 end
 
 #Spree::Config.set :enabled_locales => ['en','es','fr', 'pt']

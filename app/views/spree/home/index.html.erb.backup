@@ -1,9 +1,3 @@
-
-
-<!-- <div class="sixteen columns"> -->
-<!--   <h1>Beliview, I'm lovin it</h1> -->
-<!-- </div> -->
-
 <% content_for :sidebar do %>
   <div data-hook="homepage_sidebar_navigation">
     <%= render :partial => 'spree/shared/taxonomies' %>
@@ -14,9 +8,3 @@
   <%= render :partial => 'spree/shared/products', :locals => { :products => @products } %>
 </div>
 
-
-
-<!-- <\!-- Sweet nested columns cleared with a clearfix class -\-> -->
-
-<!-- <div class="five columns omega">AASDASD</div> -->
-<!-- <div class="eleven columns alpha">AASDASD</div> -->

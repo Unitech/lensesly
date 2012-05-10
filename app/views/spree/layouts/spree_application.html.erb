@@ -4,7 +4,7 @@
 <!--[if IE 7 ]>    <html class="ie ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]>    <html class="ie ie8" lang="en"> <![endif]-->
 <!--[if IE 9 ]>    <html class="ie ie9" lang="en"> <![endif]-->
-<!--[if gt IE 9]><!--><html lang="en"><!--<![endif]-->
+<!--[if gt IE 9]><!--><html lang="fr"><!--<![endif]-->
 
 					 
 					 <head data-hook="inside_head">
@@ -15,14 +15,15 @@
   <%= render :partial => 'shared/facebook' %>
   <div class="container">
 
-    <figure id="logo" class="columns alpha six" data-hook>
-      <%= logo %>
-    </figure> 
 
     <header id="header" class="row" data-hook>
+
+      <figure id="logo" class="columns alpha seven" data-hook>
+	<%= image_tag 'logo-450.png', :alt => 'logo', :width => '210' %>
+      </figure> 
       
       
-      <nav id="top-nav-bar" class="columns omega ten">
+      <nav id="top-nav-bar" class="columns omega twelwe">
         <ul id="nav-bar" class="inline" data-hook>
           <%= render :partial => 'spree/shared/nav_bar' %>
         </ul>
