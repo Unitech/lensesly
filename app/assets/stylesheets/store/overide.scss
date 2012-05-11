@@ -1,4 +1,5 @@
 
+@import url(//fonts.googleapis.com/css?family=Federo);
 
 #products .prod-el {
     width : 330px;
@@ -19,4 +20,53 @@ ul#products li a.info {
 
 figure#logo {
     padding-left : 40px;
+}
+
+
+.slider-trends {
+    height : 352px;
+    border : 1px solid #D9D9DB;
+    
+    .univers {
+	font-family: 'Federo', sans-serif;
+	img {
+	    width : 185px;
+	}
+	position : relative;
+	#mask {
+	    height : 100px;
+	    position : absolute;
+	    bottom : 2px;
+	    width : 184px;
+	    background-color : #d8b7d2;
+	    filter: alpha(opacity=30);
+	    -moz-opacity: 0.95;
+	    -khtml-opacity: 0.95;
+	    
+	    // Babacool d8b7d2
+	    // Fashion girl F7D095
+	    // Student Style A5A5A4
+	    // Working Girl CAE5E3
+	    // Trendy F6CeD6
+	    
+
+	    #content {
+		padding : 10px;
+		color : black;
+		h3 {
+		    font-size : 26px;
+		    font-weight : normal;
+		    color : white;
+		    text-align : left;
+		}
+	    }
+	}
+	&:hover {
+	    cursor : pointer;
+	}
+    }
+}
+
+#top-nav-bar {
+    margin-left : 60px;
 }

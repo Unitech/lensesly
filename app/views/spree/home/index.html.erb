@@ -1,20 +1,61 @@
 
-
-<!-- <div class="sixteen columns"> -->
-<!--   <h1>Beliview, I'm lovin it</h1> -->
-<!-- </div> -->
-
-<% content_for :sidebar do %>
-  <div data-hook="homepage_sidebar_navigation">
-    <%= render :partial => 'spree/shared/taxonomies' %>
-  </div>
+<% content_for :javascripts do %>
+  <%= javascript_include_tag 'store/home' %>
 <% end %>
 
-<div data-hook="homepage_products">
-  <%= render :partial => 'spree/shared/products', :locals => { :products => @products } %>
+<div class="slider-trends sixteen columns">
+  <span class="univers">
+    <%= image_tag 'slider/univerbaba-200.png' %>
+    <div id="mask">
+      <div id="content">
+	<h3>Baba...</h3>
+	Lorem Ipsum
+      </div>
+    </div>
+  </span>
+
+  <span class="univers">
+    <%= image_tag 'slider/universetudiante-200.png' %>
+    <div id="mask">
+      <div id="content">
+	<h3>Student Style...</h3>
+      </div>
+    </div>
+  </span>
+
+  <span class="univers">
+    <%= image_tag 'slider/universfashion-200.png' %>
+    <div id="mask">
+      <div id="content">
+	<h3>Fashion Girl...</h3>
+      </div>
+    </div>
+  </span>
+
+  <span class="univers">
+    <%= image_tag 'slider/universtrendy-200.png' %>
+    <div id="mask">
+      <div id="content">
+	<h3>Trendy...</h3>
+      </div>
+    </div>
+  </span>
+
+  <span class="univers">
+    <%= image_tag 'slider/universworking-200.png' %>
+    <div id="mask">
+      <div id="content">
+	<h3>Working Girl...</h3>
+      </div>
+    </div>
+  </span>
+
 </div>
 
 
+<div class="sixteen columns">
+  
+</div>
 
 <!-- <\!-- Sweet nested columns cleared with a clearfix class -\-> -->
 
