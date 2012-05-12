@@ -15,9 +15,9 @@
 
     <header id="header" class="row" data-hook>
 
-      <a href="<%= root_path %>" title="Home">
+      <a href="<%= root_path %>" title="Acceuil">
 	<figure id="logo" class="columns alpha seven" data-hook>
-	  <%= image_tag 'logo-450.png', :alt => 'logo', :width => '210' %>
+	  <%= image_tag 'logo-450.png', :alt => 'Beliview logo', :width => '210' %>
 	</figure> 
       </a>
       
@@ -31,7 +31,8 @@
       <% if store_menu? %>
         <nav class="columns  omega sixteen">
           <ul id="main-nav-bar" class="inline" data-hook>            
-            <%= render :partial => 'spree/shared/store_menu' %>
+            <%#= render :partial => 'spree/shared/store_menu' %>
+	    <%= render_navigation %>
           </ul>
         </nav>
       <% end %>
@@ -39,6 +40,7 @@
     </header>
 
     <div id="wrapper" class="row" data-hook>
+
       
       <% if content_for?(:sidebar) %>
         <aside id="sidebar" class="columns alpha four" data-hook>
@@ -46,7 +48,7 @@
         </aside>
       <% end %>
 
-      <div id="content" class="columns omega <% if !content_for?(:sidebar) %> sixteen alpha <% else %> twelve <% end %>" data-hook>
+      <div id="content" <% if !defined?(@layout_override) %> class="columns omega <% if !content_for?(:sidebar) %> sixteen alpha <% else %> twelve <% end %>" <% end %>data-hook>
         <%= breadcrumbs(@taxon) %>
         <%= flash_messages %>
         <%= yield %>
@@ -54,13 +56,15 @@
 
     </div>
 
-    <footer id="footer" class="row" data-hook>
-      <div id="footer-left" class="columns alpha eight" data-hook>
-        <p><%= t(:powered_by) %> <%= link_to 'Spree', 'http://spreecommerce.com/' %></p>
-      </div>
-      <div id="footer-right" class="columns omega eight" data-hook></div>
-    </footer>
 
+  </div>
+
+  <div class="container container-footer">
+    <footer id="footer" class="columns omega twelwe" data-hook>
+      <div id="footer-intern">
+	<%= render :partial => 'spree/shared/footer' %>
+      </div>
+    </footer>
   </div>
 
   <%= render :partial => 'spree/shared/google_analytics' %>

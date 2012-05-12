@@ -28,7 +28,7 @@ gem 'spree_social', :git => 'https://github.com/spree/spree_social.git'
 #gem 'spree_sitemap_generator', :git => 'https://github.com/jdutil/spree-sitemap-generator.git'
 
 
-
+gem 'simple-navigation'
 
 
 group :assets do

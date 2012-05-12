@@ -1,5 +1,6 @@
 
 @import url(//fonts.googleapis.com/css?family=Federo);
+@import 'functions';
 
 #products .prod-el {
     width : 330px;
@@ -10,35 +11,45 @@ ul#products li a.info {
 
 #wrapper {
     min-height : 800px;
+    padding : 0 10px;
 }
 
+body {
+    margin-bottom : 80px;
+}
 .container {
     padding : 10px;
     background-color : white;
     margin-bottom : 20px;
+    @include rounded_bottom(10px);
+}
+
+.container-footer {
+    background-color : transparent !important;
 }
 
 figure#logo {
     padding-left : 40px;
 }
 
+$width-uni-slide : 187px; 
 
 .slider-trends {
     height : 352px;
-    border : 1px solid #D9D9DB;
-    
+    margin-left : 2px;
     .univers {
+	float : left;
+	display : block;
 	font-family: 'Federo', sans-serif;
-	img {
-	    width : 185px;
+	img, #mask {
+	    width : $width-uni-slide;
 	}
 	position : relative;
 	#mask {
-	    height : 100px;
+	    height : 160px;
 	    position : absolute;
 	    bottom : 2px;
-	    width : 184px;
-	    background-color : #d8b7d2;
+	    //background-color : #d8b7d2;
 	    filter: alpha(opacity=30);
 	    -moz-opacity: 0.95;
 	    -khtml-opacity: 0.95;
@@ -52,11 +63,12 @@ figure#logo {
 
 	    #content {
 		padding : 10px;
+		text-align : left;
 		color : black;
 		h3 {
 		    font-size : 26px;
 		    font-weight : normal;
-		    color : white;
+
 		    text-align : left;
 		}
 	    }
@@ -67,6 +79,54 @@ figure#logo {
     }
 }
 
+.avantages {
+    margin-left : 2px;
+    border : 1px solid #D9D9DB;
+    margin-top : 20px;
+    .uniav {
+	float : left;
+	width : $width-uni-slide;	
+	text-align : center;
+	vertical-align:middle;
+	height : 100px;
+	p {
+	    margin-top : 20px;
+	    padding : 2px;
+	    font-size : 15px;
+	}
+    }
+    img {
+	width : $width-uni-slide - 150;
+    }
+}
+
+#home_product_tmp {
+    margin-top : 20px;
+    margin-left : 100px;
+}
+
+.pagination {
+    margin : 0 auto;
+    font-size : 16px;
+}
+
 #top-nav-bar {
     margin-left : 60px;
+}
+
+footer {
+    min-height : 200px;
+    //background-color : #8E8E8E;
+    color : white;
+    #footer-intern {
+	padding : 0 7px;
+    }
+    h2 {
+	margin-top : 4px;
+	border-bottom : 1px solid white;
+    }
+    h3 {
+	text-align : center;
+	font-size : 17px;
+    }
 }

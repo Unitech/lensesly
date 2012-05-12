@@ -1,16 +1,22 @@
 Lensesly::Application.routes.draw do
 
-  # This line mounts Spree's routes at the root of your application.
-  # This means, any requests to URLs such as /products, will go to Spree::ProductsController.
-  # If you would like to change where this engine is mounted, simply change the :at option to something different.
-  #
-  # We ask that you don't use the :as option here, as Spree relies on it being the default of "spree"
+
+  scope :controller => :content do 
+    get '/opticiens' => :opticians, :as => :loli
+    get '/aide' => :help, :as => :help
+    get '/a-propos' => :about, :as => :aboute
+    get '/contact' => :contact, :as => :contact
+
+  end
+
+  match '/conditions' => 'content#conditions', :as => :conditions
+
   mount Spree::Core::Engine, :at => '/'
 
 
   match '/test' => 'spree/products#test'
-
   match '/test_taxon/*id' => 'spree/taxons#test'
+
   
           # The priority is based upon order of creation:
   # first created -> highest priority.

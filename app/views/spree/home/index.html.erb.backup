@@ -1,3 +1,28 @@
+
+
+  <div class="uniav" style="background : url('<%= image_path 'avantages/economique.png' %>') no-repeat center">
+    <p style="margin-top: 28px;">Nous vous proposons les prix les plus bas du marché</p>
+    
+  </div>
+
+  <div class="uniav" style="background : url('<%= image_path 'avantages/essais.png' %>') no-repeat center">
+    <p style="margin-top: 28px;">Essayez gratuitement plusieurs paires à domicile</p>
+  </div>
+
+  <div class="uniav" style="background : url('<%= image_path 'avantages/satisfaite.png' %>') no-repeat center">
+    <p>Si vous n'êtes pas satisfaites nous vous rembourserons en intégralité</p>
+  </div>
+
+  <div class="uniav" style="background : url('<%= image_path 'avantages/opticien.png' %>') no-repeat center">
+    <p>Nos opticiens sont à votre écoute pour répondre à vos questions</p>
+  </div>
+
+  <div class="uniav" style="background : url('<%= image_path 'avantages/communaute.png' %>') no-repeat center">
+    <p>Accordez vos lunettes à la tendance actuelle grâce aux conseils de nos stylistes</p>
+  </div>
+
+
+
 <% content_for :sidebar do %>
   <div data-hook="homepage_sidebar_navigation">
     <%= render :partial => 'spree/shared/taxonomies' %>

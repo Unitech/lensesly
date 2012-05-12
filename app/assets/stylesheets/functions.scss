@@ -1,0 +1,255 @@
+@import 'variables';
+
+//-webkit-animation: fontbulger 5s infinite;
+
+@mixin rounded_bottom_left($amount) {
+    -moz-border-radius-bottomleft: $amount;
+    -webkit-border-radius: 0px 0px 0px $amount;
+    border-radius: 0px 0px 0px $amount;
+}
+
+@mixin rounded($amount) {
+    -moz-border-radius: $amount;
+    -webkit-border-radius: $amount;
+    -khtml-border-radius: $amount;
+    border-radius: $amount;
+}
+
+
+@mixin rounded_bottom($amount) {
+    -moz-border-radius-bottomleft: $amount;
+    -moz-border-radius-bottomright: $amount;
+    -moz-border-radius-topright: 0px;
+    -moz-border-radius-topleft: 0px;
+    -webkit-border-radius: 0px 0px $amount $amount;
+    border-radius: 0px 0px $amount $amount;
+}
+
+
+@mixin transition($amount) {
+    -webkit-transition: all $amount ease-out;
+    -moz-transition: all $amount ease-out;
+    -o-transition: all $amount ease-out;
+    transition: all $amount ease-out;
+}
+
+
+@mixin background-gradient($color, $percent) {
+    background: -webkit-gradient(
+	linear, left top, left bottom, 
+	from($color),
+	to(lighten($color, $percent)));
+    background: -moz-linear-gradient(
+   	top,
+   	$main_color $percent,
+   	lighten($color, $percent));
+    background-color : $color;
+}
+
+@mixin text-effect() {
+    background: -webkit-gradient(linear, left top, right top,
+				 color-stop(0, #999),
+				 color-stop(0.375, #999),
+				 color-stop(0.5, white),
+				 color-stop(0.625, #999),
+				 color-stop(1, #999));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: shimmer 3s infinite;
+}
+
+@-webkit-keyframes fontbulger {
+    0% {
+        opacity : 1;
+    }
+    50% {
+        opacity : 0.2;
+    }
+    100% {
+        opacity : 1;
+    }
+}
+
+@-webkit-keyframes morph {
+    0% {
+	@include rounded_bottom_left(8px);
+    }
+    50% {
+	@include rounded_bottom_left(50px);
+    }
+    100% {
+	@include rounded_bottom_left(8px);
+    }
+}
+
+
+@mixin morph-it() {
+    -webkit-animation-name: morph;
+    -webkit-animation-duration: 0.8s;
+    -webkit-transform-origin:50% 50%;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+}
+
+@-webkit-keyframes spaceboots {
+    0% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
+    10% { -webkit-transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { -webkit-transform: translate(-3px, 0px) rotate(1deg); }
+    30% { -webkit-transform: translate(0px, 2px) rotate(0deg); }
+    40% { -webkit-transform: translate(1px, -1px) rotate(1deg); }
+    50% { -webkit-transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { -webkit-transform: translate(-3px, 1px) rotate(0deg); }
+    70% { -webkit-transform: translate(2px, 1px) rotate(-1deg); }
+    80% { -webkit-transform: translate(-1px, -1px) rotate(1deg); }
+    90% { -webkit-transform: translate(2px, 2px) rotate(0deg); }
+    100% { -webkit-transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+@mixin shake-it() {
+    -webkit-animation-name: spaceboots;
+    -webkit-animation-duration: 0.8s;
+    -webkit-transform-origin:50% 50%;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+}
+
+@mixin special-border() {
+    border-color: rgba(82, 168, 236, 0.5);
+    -webkit-box-shadow: 0 0 30px rgba(82, 168, 236, 0.6);
+    -moz-box-shadow: 0 0 15px rgba(82, 168, 236, 0.6);
+    box-shadow: 0 0 45px rgba(82, 168, 236, 0.6);	
+}
+
+@mixin btn-style($width) {
+    text-shadow : none;
+    display : block;
+    width : $width;
+    border : 1px solid silver;
+    padding: 10px 20px;
+    color: black;
+    background-color: $apply-btn-color;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+
+    font-family: 'Play', sans-serif;
+    text-decoration : none;
+    line-height : 37px;
+    font-size : 20px;
+    text-align : center;
+    cursor : pointer;
+    border : none;
+    @include transition(0.2s);
+    &:hover {
+	background-color : $background-color;
+	color : white;
+    }
+    
+}
+
+
+@mixin normalize-inputs() {
+    input[type="email"], input[type="password"], input[type="text"] {
+	border: solid 1px #E5E5E5;
+	height : 20px;
+	padding : 5px 8px;
+	font-size : 16px;
+    }
+}
+
+@mixin normalize-labels() {
+    label {
+	display : block;
+	font-size : 15px;
+	margin-top : 10px;
+	margin-bottom : 3px;
+	color : #222;
+	font-weight : bold;
+    }
+}
+
+
+@mixin wobble() {
+    @-webkit-keyframes wobble {
+	0% { -webkit-transform: translateX(0%); }
+	15% { -webkit-transform: translateX(-25%) rotate(-5deg); }
+	30% { -webkit-transform: translateX(20%) rotate(3deg); }
+	45% { -webkit-transform: translateX(-15%) rotate(-3deg); }
+	60% { -webkit-transform: translateX(10%) rotate(2deg); }
+	75% { -webkit-transform: translateX(-5%) rotate(-1deg); }
+	100% { -webkit-transform: translateX(0%); }
+    }
+
+    @-moz-keyframes wobble {
+	0% { -moz-transform: translateX(0%); }
+	15% { -moz-transform: translateX(-25%) rotate(-5deg); }
+	30% { -moz-transform: translateX(20%) rotate(3deg); }
+	45% { -moz-transform: translateX(-15%) rotate(-3deg); }
+	60% { -moz-transform: translateX(10%) rotate(2deg); }
+	75% { -moz-transform: translateX(-5%) rotate(-1deg); }
+	100% { -moz-transform: translateX(0%); }
+    }
+
+    @-ms-keyframes wobble {
+	0% { -ms-transform: translateX(0%); }
+	15% { -ms-transform: translateX(-25%) rotate(-5deg); }
+	30% { -ms-transform: translateX(20%) rotate(3deg); }
+	45% { -ms-transform: translateX(-15%) rotate(-3deg); }
+	60% { -ms-transform: translateX(10%) rotate(2deg); }
+	75% { -ms-transform: translateX(-5%) rotate(-1deg); }
+	100% { -ms-transform: translateX(0%); }
+    }
+
+    @-o-keyframes wobble {
+	0% { -o-transform: translateX(0%); }
+	15% { -o-transform: translateX(-25%) rotate(-5deg); }
+	30% { -o-transform: translateX(20%) rotate(3deg); }
+	45% { -o-transform: translateX(-15%) rotate(-3deg); }
+	60% { -o-transform: translateX(10%) rotate(2deg); }
+	75% { -o-transform: translateX(-5%) rotate(-1deg); }
+	100% { -o-transform: translateX(0%); }
+    }
+
+    @keyframes wobble {
+	0% { transform: translateX(0%); }
+	15% { transform: translateX(-25%) rotate(-5deg); }
+	30% { transform: translateX(20%) rotate(3deg); }
+	45% { transform: translateX(-15%) rotate(-3deg); }
+	60% { transform: translateX(10%) rotate(2deg); }
+	75% { transform: translateX(-5%) rotate(-1deg); }
+	100% { transform: translateX(0%); }
+    }
+
+    .wobble {
+	-webkit-animation-name: wobble;
+	-moz-animation-name: wobble;
+	-ms-animation-name: wobble;
+	-o-animation-name: wobble;
+	animation-name: wobble;
+    }
+}
+
+@mixin animation-special() {
+    
+
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-delay: .2s;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-duration: 1s;
+    -moz-animation-delay: .2s;
+    -moz-animation-timing-function: ease;
+    -moz-animation-fill-mode: both;
+    -ms-animation-duration: 1s;
+    -ms-animation-delay: .2s;
+    -ms-animation-timing-function: ease;
+    -ms-animation-fill-mode: both;
+    animation-duration: 1s;
+    animation-delay: .2s;
+    animation-timing-function: ease;
+    animation-fill-mode: both;
+}

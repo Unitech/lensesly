@@ -3,59 +3,90 @@
   <%= javascript_include_tag 'store/home' %>
 <% end %>
 
-<div class="slider-trends sixteen columns">
-  <span class="univers">
-    <%= image_tag 'slider/univerbaba-200.png' %>
-    <div id="mask">
-      <div id="content">
-	<h3>Baba...</h3>
-	Lorem Ipsum
-      </div>
-    </div>
-  </span>
+<% @layout_override = true %>
 
-  <span class="univers">
-    <%= image_tag 'slider/universetudiante-200.png' %>
-    <div id="mask">
-      <div id="content">
-	<h3>Student Style...</h3>
+<div class="columns omeage sixteen alpha">
+  <div class="slider-trends">
+    <span class="univers">
+      <%= image_tag 'slider/univerbaba-200.png', :title => 'Univers Baba' %>
+      <div id="mask" style="background-color : #d8b7d2">
+	<div id="content">
+	  <h3>Baba</h3>
+	  Lorem Ipsum
+	</div>
       </div>
-    </div>
-  </span>
+    </span>
 
-  <span class="univers">
-    <%= image_tag 'slider/universfashion-200.png' %>
-    <div id="mask">
-      <div id="content">
-	<h3>Fashion Girl...</h3>
+    <span class="univers">
+      <%= image_tag 'slider/universetudiante-200.png', :title => 'Univers Étudiante' %>
+      <div id="mask" style="background-color : #a5a5a4">
+	<div id="content">
+	  <h3>Student Style</h3>
+	</div>
       </div>
-    </div>
-  </span>
+    </span>
 
-  <span class="univers">
-    <%= image_tag 'slider/universtrendy-200.png' %>
-    <div id="mask">
-      <div id="content">
-	<h3>Trendy...</h3>
+    <span class="univers">
+      <%= image_tag 'slider/universfashion-200.png', :title => 'Univers Fashion' %>
+      <div id="mask" style="background-color : #f7d095">
+	<div id="content">
+	  <h3>Fashion Girl</h3>
+	</div>
       </div>
-    </div>
-  </span>
+    </span>
 
-  <span class="univers">
-    <%= image_tag 'slider/universworking-200.png' %>
-    <div id="mask">
-      <div id="content">
-	<h3>Working Girl...</h3>
+    <span class="univers">
+      <%= image_tag 'slider/universtrendy-200.png', :title => 'Univers Trendy' %>
+      <div id="mask" style="background-color : #f6ced6">
+	<div id="content">
+	  <h3>Trendy</h3>
+	</div>
       </div>
-    </div>
-  </span>
+    </span>
+
+    <span class="univers">
+      <%= image_tag 'slider/universworking-200.png', :title => 'Univers Working Girl' %>
+      <div id="mask" style="background-color : #cae5e3">
+	<div id="content">
+	  <h3>Working Girl</h3>
+	</div>
+      </div>
+    </span>
+
+  </div>
+</div>
+
+<div class="columns omega sixteen alpha avantages">
+
+  <div class="uniav">
+    <p style="margin-top: 28px;">Nous vous proposons les prix les plus bas du marché</p>
+    
+  </div>
+
+  <div class="uniav">
+    <p style="margin-top: 28px;">Essayez gratuitement plusieurs paires à domicile</p>
+  </div>
+
+  <div class="uniav">
+    <p>Si vous n'êtes pas satisfaites nous vous rembourserons en intégralité</p>
+  </div>
+
+  <div class="uniav">
+    <p>Nos opticiens sont à votre écoute pour répondre à vos questions</p>
+  </div>
+
+  <div class="uniav">
+    <p>Accordez vos lunettes à la tendance actuelle grâce aux conseils de nos stylistes</p>
+  </div>
 
 </div>
 
 
-<div class="sixteen columns">
-  
+<div id="home_product_tmp" class="columns omega sixteen alpha ">
+  <%= render :partial => 'spree/shared/products', :locals => { :products => @products } %>
 </div>
+
+
 
 <!-- <\!-- Sweet nested columns cleared with a clearfix class -\-> -->
 

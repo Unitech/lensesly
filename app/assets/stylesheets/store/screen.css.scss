@@ -19,13 +19,11 @@ $product_link_text_color:   #333;
 /*--------------------------------------*/
 @import url(//fonts.googleapis.com/css?family=Brawler);
 
-@import url(//fonts.googleapis.com/css?family=Ubuntu);
-
 
 /*--------------------------------------*/
 /* Font families
 /*--------------------------------------*/
-$ff_base:       'Ubuntu', sans-serif;
+$ff_base:       Verdana;
 
 /*--------------------------------------
   | Font sizes
@@ -33,7 +31,7 @@ $ff_base:       'Ubuntu', sans-serif;
   |- Navigation                         
   |                                    */
       $header_navigation_font_size:           14px;
-      $horizontal_navigation_font_size:       16px;
+      $horizontal_navigation_font_size:       20px;
       $main_navigation_header_font_size:      14px;
       $main_navigation_font_size:             12px;
 /*|------------------------------------
@@ -252,8 +250,8 @@ mark {background-color: $link_text_color; color: $layout_background_color; font-
   /* Footer
   /*--------------------------------------*/
   footer#footer {
-    padding: 10px 0;
-    border-top: 1px solid lighten($body_text_color, 60);
+      //padding: 10px 0;
+//    border-top: 1px solid lighten($body_text_color, 60);
   }
 
   /*--------------------------------------*/
@@ -300,7 +298,8 @@ mark {background-color: $link_text_color; color: $layout_background_color; font-
   nav#top-nav-bar {
     text-align: right;
     margin-top: 20px;
-
+    float : right;
+    margin-right : 3px;
     ul {
       li {
         margin-bottom: 5px;
@@ -316,8 +315,8 @@ mark {background-color: $link_text_color; color: $layout_background_color; font-
   }
 
   nav #main-nav-bar {
-    text-transform: uppercase;
-    font-weight: bold;
+      font-family: 'Federo', sans-serif;
+
     margin-top: 20px;
     border-bottom: 1px solid lighten($body_text_color, 60);
     padding-bottom: 6px;
