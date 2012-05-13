@@ -32,7 +32,7 @@ SimpleNavigation::Configuration.run do |navigation|
 
   # Define the primary navigation
   navigation.items do |p|
-    p.item :accueil, 'Accueil', '/'
+    p.item :accueil, 'Accueil', '/', :title => 'Accueil'
     p.item :lunettes, 'Lunettes', products_path
     p.item :opticians, 'Nos Opticiens', '/opticiens'
     p.item :help, 'Aide', '/aide'

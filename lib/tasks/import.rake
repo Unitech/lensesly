@@ -22,7 +22,7 @@ namespace :spree do
   end
   
   desc "Update / Import products from CSV File, expects file=/path/to/import.csv"
-  task :import_products => :environment do
+  task :import_products => :environment do |t, args|
     require 'csv'
 
     puts "Deleting"
@@ -42,21 +42,35 @@ namespace :spree do
     puts "Creating Taxonomy"
 
 
-    categories = Hash.new
 
-    taxonomy = Spree::Taxonomy.create(:name => 'Categories')
-    taxon_last_id = Spree::Taxon.last.id
 
-    CSV.foreach("#{Rails.root}/lib/data/categories.csv", {:col_sep => ";"}) do |row|
-      taxon = Spree::Taxon.create(:parent_id => taxon_last_id, :name => row[2])
-      categories.merge!({row[0] => {"name" => row[2], "taxon" => taxon}})
-    end
+    
 
-    puts categories
+
+    
+
+    
+    # categories = Hash.new
+
+    # taxonomy = Spree::Taxonomy.create(:name => 'Categories')
+    # taxon_last_id = Spree::Taxon.last.id
+
+    # CSV.foreach("#{Rails.root}/lib/data/categories.csv", {:col_sep => ";"}) do |row|
+    #   taxon = Spree::Taxon.create(:parent_id => taxon_last_id, :name => row[2])
+    #   categories.merge!({row[0] => {"name" => row[2], "taxon" => taxon}})
+    # end
+
+    # puts categories
     puts "Creating product"
-
+    
+    limit = 50
+    
     CSV.foreach("#{Rails.root}/lib/data/products.csv", {:col_sep => ";"}) do |row|
 
+      limit -= 1
+      if limit == 0
+        break
+      end
       #puts row[2].split(' - ', 2)[1].gsub('/', '')
       next if row[2].nil?
 
@@ -65,10 +79,10 @@ namespace :spree do
       puts tmp
       image = tmp
 
-      #path = "#{Rails.root}/images/" + image;
+      path = "#{Rails.root}/images/" + image;
 
-      # if File.exist?(path) and (row[43] == 'femme' || row[43] == 'homme, femme')
-      if (row[43] == 'femme' || row[43] == 'homme, femme')
+      if File.exist?(path) and (row[43] == 'femme' || row[43] == 'homme, femme')
+      #if (row[43] == 'femme' || row[43] == 'homme, femme')
         
         prod = Spree::Product.new :meta_keywords => row[23],
              :name => row[2],
@@ -80,20 +94,55 @@ namespace :spree do
         
         prod.save
         prod_v = Spree::Variant.last
-                  prod.taxons << categories[row[3]]["taxon"]
-        begin
+        # #           prod.taxons << categories[row[3]]["taxon"]
+        # begin
 
-          puts "=-===================== > Success !"
-        rescue
-          prod.taxons << categories[row[47]]["taxon"]
-        end
+        #   puts "=-===================== > Success !"
+        # rescue
+        #   #prod.taxons << categories[row[47]]["taxon"]
+        # end
 
         prod_v.save
         
-        # prod_v.images << Spree::Image.create(:attachment => File.open("#{Rails.root}/images/" + image), :alt => row[2])
+        prod_v.images << Spree::Image.create(:attachment => File.open(path), :alt => row[2])
       end
       
       
+      
+    end
+
+    taxonomy = Spree::Taxonomy.create(:name => 'Univers')
+    taxon_last_id = Spree::Taxon.last.id
+
+    baba = Spree::Taxon.create(:parent_id => taxon_last_id, :name => 'Baba')
+    fashion = Spree::Taxon.create(:parent_id => taxon_last_id, :name => 'Fashion Girl')
+    student = Spree::Taxon.create(:parent_id => taxon_last_id, :name => 'Student Style')
+    trendy = Spree::Taxon.create(:parent_id => taxon_last_id, :name => 'Trendy')
+    working = Spree::Taxon.create(:parent_id => taxon_last_id, :name => 'Working Girl')
+
+    random_prod = Spree::Product.all(:limit => 20, :offset => 6)
+
+    random_prod.each do |p|
+      p.taxons << baba
+      p.taxons << fashion
+      p.taxons << student
+      p.taxons << trendy
+      p.taxons << working
+      p.save
+    end
+    
+    
+    
+    
+    #Spree::Taxon.all
+
+    
+    
+  end
+end
+
+
+
       #:on_hand => 100                   
       # 0 = id
       # 2 = ref
@@ -116,10 +165,3 @@ namespace :spree do
       # 50 = forme
       #puts row[52]
       # row[2] useless
-      
-    end
-
-    Spree::Taxon.all
-    
-  end
-end

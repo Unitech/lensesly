@@ -9,13 +9,51 @@
 <ul id="products" class="inline product-listing" data-hook>
   <% products.each do |product| %>
     <% if Spree::Config[:show_zero_stock_products] || product.has_stock? %>
-      <li id="product_<%= product.id %>" class="columns prod-el <%= cycle("alpha", "secondary", "", "omega secondary") %>" data-hook="products_list_item" itemscope itemtype="http://schema.org/Product">
-        <div class="product-image">
-          <%= link_to small_image(product, :itemprop => "image"), product, :itemprop => 'url' %>
-        </div>
-        <%= link_to truncate(product.name, :length => 50), product, :class => 'info', :itemprop => "name", :title => product.name %>
-        <span class="price selling" itemprop="price"><%= number_to_currency product.price %></span>
-      </li>
+
+	<li id="product_<%= product.id %>" class="columns prod-el <%= cycle("alpha", "secondary", "", "omega secondary") %>" data-hook="products_list_item" itemscope itemtype="http://schema.org/Product">
+
+
+	  <%= render :partial => 'shared/mini_product_admin', :locals => {:product => product } %>
+
+          <div class="product-image">
+	    
+            <%= link_to large_image(product, :itemprop => "image", :width => '330', :height => '180'), product, :itemprop => 'url' %>
+	    
+
+	    <div id="stylist-advice-products">
+	      
+	      <% product.taxons.each do |p| %>
+		<% case p.name %>
+		<% when "Baba" %>
+		<div id="stock-round" class="baba">		  
+		</div>
+		<% when "Fashion Girl" %>		
+		<div id="stock-round" class="fashion">		  
+		</div>
+		<% when "Student Style" %>
+		<div id="stock-round" class="student">		
+		</div>
+		<% when "Trendy" %>		
+		<div id="stock-round" class="trendy">		  
+		</div>
+		<% when "Working Girl" %>
+		<div id="stock-round" class="working">		  
+		</div>		
+	      <% end %>	      
+    <% end %>
+    </div>
+
+
+
+
+
+
+	 	    
+          </div>
+          <%= link_to truncate(product.name, :length => 50), product, :class => 'info', :itemprop => "name", :title => product.name %>
+          <span class="price selling" itemprop="price"><%= number_to_currency product.price %></span>
+	</li>
+
     <% end %>
   <% end %>
 </ul>

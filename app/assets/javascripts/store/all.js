@@ -13,3 +13,5 @@
 //= require store/spree_promo
 //= require store/spree_wishlist
 //= require store/spree_social
+
+//= require store/admin

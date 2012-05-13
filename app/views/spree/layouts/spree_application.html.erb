@@ -30,9 +30,36 @@
 
       <% if store_menu? %>
         <nav class="columns  omega sixteen">
-          <ul id="main-nav-bar" class="inline" data-hook>            
+          <ul id="main-nav-bar" class="inline" data-hook>	    
+	    <li id="accueil" title="Accueil">
+	      <a href="/" title="BeliView - Acceuil">Accueil</a>
+	    </li>
+	    |
+	    <li id="lunettes">
+	      <a href="/products" title="BeliView - Toutes les Lunettes">Lunettes</a>
+	    </li>
+	    |
+	    <li id="opticians">
+	      <a href="/opticiens" title="Beliview - Nos Opticiens">Nos Opticiens</a>
+	    </li>
+	    |
+	    <li id="blog">
+	      <a href="http://blog.beliview.fr" title="Beliview - Blog">Tendances</a>
+	    </li>
+	    |
+	    <li id="help">
+	      <a href="/aide" title="Beliview - Aide">Aide</a>
+	    </li>
+	    |
+	    <li id="help">
+	      <a href="/concours" title="Beliview - Concours">Concours de beauté Beliview</a>
+	    </li>
+	    <li id="link-to-cart">
+	      <%= link_to_cart %>
+	    </li>
+	    
             <%#= render :partial => 'spree/shared/store_menu' %>
-	    <%= render_navigation %>
+	    <%#= render_navigation %>
           </ul>
         </nav>
       <% end %>
@@ -57,6 +84,12 @@
     </div>
 
 
+  </div>
+  
+  <div class="container container-footer">
+    <footer id="footer" class="columns omega twelwe" data-hook>
+      Les droits sur les images, et plus particulièrement le logo sont en license fermées et n'ont pas lieu d'être réutilisé en dehors du cadre fixé. Le site est entièrement en license fermée et ne peut faire l'office d'une quelconque copie sous peine de poursuites judiciaire. Les méthodes utilisées au sein de ce site (social media strategy, présentation de produit et tous élèments s'y rapprochant) ne peuvent en aucun cas être plagié. L'équipe vous remercie pour votre compréhension.<br/> ©Beliview 2012
+      </footer>
   </div>
 
   <div class="container container-footer">

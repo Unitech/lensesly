@@ -7,79 +7,135 @@
 
 <div class="columns omeage sixteen alpha">
   <div class="slider-trends">
-    <span class="univers">
-      <%= image_tag 'slider/univerbaba-200.png', :title => 'Univers Baba' %>
-      <div id="mask" style="background-color : #d8b7d2">
-	<div id="content">
-	  <h3>Baba</h3>
-	  Lorem Ipsum
-	</div>
-      </div>
-    </span>
 
-    <span class="univers">
-      <%= image_tag 'slider/universetudiante-200.png', :title => 'Univers Étudiante' %>
-      <div id="mask" style="background-color : #a5a5a4">
-	<div id="content">
-	  <h3>Student Style</h3>
+    <a href="/t/univers/baba" title="Univers Baba">
+      <span class="univers">
+	<%= image_tag 'slider/univerbaba-200.png', :title => 'Univers Baba' %>
+	<div id="mask" style="background-color : rgba(215,182,208,0.9)">
+	  <div id="content">
+	    <h3>Baba</h3>
+	    <p>
+	      Vous êtes plutôt femme décontractée mais vous faites attention à vous.
+	    </p>
+	  </div>
 	</div>
-      </div>
-    </span>
+      </span>
+    </a>
 
+    <a href="/t/univers/fashion-girl" title="Univers Fashion Girl">
     <span class="univers">
       <%= image_tag 'slider/universfashion-200.png', :title => 'Univers Fashion' %>
-      <div id="mask" style="background-color : #f7d095">
+      <div id="mask" style="background-color : rgba(244,207,151, 0.9)">
 	<div id="content">
 	  <h3>Fashion Girl</h3>
+	  <p>
+	    On peut vous définir par <br/> <i>"La mode se démode, le style jamais."</i>
+	  </p>
 	</div>
       </div>
     </span>
 
+    <a href="/t/univers/student-style" title="Univers Student Style">
     <span class="univers">
-      <%= image_tag 'slider/universtrendy-200.png', :title => 'Univers Trendy' %>
-      <div id="mask" style="background-color : #f6ced6">
+      <%= image_tag 'slider/universetudiante-200.png', :title => 'Univers Étudiante' %>
+      <div id="mask" style="background-color : rgba(161,160,160, 0.9)">
 	<div id="content">
-	  <h3>Trendy</h3>
+	  <h3>Student Style</h3>
+	  <p>
+	    Étudiante mais stylée, vous voulez incarner le parfait équilibre entre l'intellect et le style.
+	  </p>
 	</div>
       </div>
     </span>
+    </a>
 
-    <span class="univers">
-      <%= image_tag 'slider/universworking-200.png', :title => 'Univers Working Girl' %>
-      <div id="mask" style="background-color : #cae5e3">
-	<div id="content">
-	  <h3>Working Girl</h3>
+
+    <a href="/t/univers/trendy" title="Univers Trendy">
+      <span class="univers">
+	<%= image_tag 'slider/universtrendy-200.png', :title => 'Univers Trendy' %>
+	<div id="mask" style="background-color : rgba(245,207,215, 0.9)">
+	  <div id="content">
+	    <h3>Trendy</h3>
+	    <p>
+	      Vous avez le dernier sac de la marque XXX de cette saison.	   
+	    </p>
+	  </div>
 	</div>
-      </div>
-    </span>
+      </span>
+    </a>
 
+    <a href="/t/univers/working-girl" title="Univers Working Girl">
+      <span class="univers">
+	<%= image_tag 'slider/universworking-200.png', :title => 'Univers Working Girl' %>
+	<div id="mask" style="background-color : rgba(200,225,222,0.9)">
+	  <div id="content">
+	    <h3>Working Girl</h3>
+	    <p>
+	      Le bureau, aussi, est un lieu de defilé de mode.
+	    </p>
+	  </div>
+	</div>
+      </span>
+    </a>
+    
   </div>
 </div>
 
-<div class="columns omega sixteen alpha avantages">
 
+<div class="columns omega sixteen alpha avantages">
   <div class="uniav">
     <p style="margin-top: 28px;">Nous vous proposons les prix les plus bas du marché</p>
-    
+    <%= image_tag 'avantages/economique.png', :title => 'Economique Beliview' %>
   </div>
 
   <div class="uniav">
     <p style="margin-top: 28px;">Essayez gratuitement plusieurs paires à domicile</p>
+    <%= image_tag 'avantages/essais.png', :title => 'Essais Beliview' %>
   </div>
 
   <div class="uniav">
     <p>Si vous n'êtes pas satisfaites nous vous rembourserons en intégralité</p>
+    <%= image_tag 'avantages/satisfaite.png', :title => 'Satisfaction Beliview' %>
   </div>
 
   <div class="uniav">
     <p>Nos opticiens sont à votre écoute pour répondre à vos questions</p>
+    <%= image_tag 'avantages/opticien.png', :title => 'Communaute Beliview' %>
   </div>
 
   <div class="uniav">
-    <p>Accordez vos lunettes à la tendance actuelle grâce aux conseils de nos stylistes</p>
+    <p>Accordez vos lunettes à votre style grâce aux <b>conseils de nos stylistes</b></p>
+    <%= image_tag 'avantages/communaute.png', :title => 'Communaute Beliview' %>
   </div>
-
 </div>
+
+
+<div class="row">
+  <div class="columns eight alpha mid-block tendances-block">
+    <%= image_tag 'hometendances.png' %>
+    <div id="mask">
+      <div id="content">
+	<h3>Tendance</h3>
+	<p>
+	  
+	  (TOREDO) Restez tenue au courant de l'actualité mode
+
+	    
+	</p>
+      </div>
+    </div>    
+  </div>
+  
+  <div class="columns eight omega mid-block opticians-block">
+    <%= image_tag 'homeopticien.png' %>
+    <div id="mask">
+      <div id="content">
+	<h3>Nos stylistes</h3>
+      </div>
+    </div>    
+  </div>
+</div>
+
 
 
 <div id="home_product_tmp" class="columns omega sixteen alpha ">
@@ -87,8 +143,3 @@
 </div>
 
 
-
-<!-- <\!-- Sweet nested columns cleared with a clearfix class -\-> -->
-
-<!-- <div class="five columns omega">AASDASD</div> -->
-<!-- <div class="eleven columns alpha">AASDASD</div> -->

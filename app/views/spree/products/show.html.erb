@@ -1,12 +1,78 @@
-<div data-hook="product_show" itemscope itemtype="http://schema.org/Product">
+
+<div data-hook="product_show" itemscope itemtype="http://schema.org/Product" id="product_show">
   <% @body_id = 'product-details' %>
 
-  <div class="columns six alpha" data-hook="product_left_part">
+  <div class="columns sixteen alpha omega" data-hook="product_left_part">
     <div class="row" data-hook="product_left_part_wrap">
 
       <div id="product-images" data-hook="product_images">
         <div id="main-image" data-hook>
           <%= render :partial => 'image' %>
+
+
+
+
+	  <div id="product_style">
+
+	    <% @product.taxons.each do |p| %>
+	      
+	      <% case p.name %>
+	      <% when "Baba" %>
+	      <div id="style-advice" class="baba">
+		<div id="sa-text">
+		  Décontracté
+		</div>
+		<%= image_tag 'show/icon.png', :height => "40", :alt => 'Style Décontracté' %>
+	      </div>
+	      	      
+	      <% when "Fashion Girl" %>
+
+	      <div id="style-advice" class="fashion">
+		<div id="sa-text">
+		  Fashion
+		</div>
+		<%= image_tag 'show/icon.png', :height => "40",:alt => 'Style Fashion' %>
+	      </div>
+	      
+	      <% when "Student Style" %>
+
+	      <div id="style-advice" class="student">
+		<div id="sa-text">
+		  Student
+		</div>
+		<%= image_tag 'show/icon.png', :height => "40", :alt => 'Style student' %>
+	      </div>
+
+	      
+	      <% when "Trendy" %>
+
+	      <div id="style-advice" class="trendy">
+		<div id="sa-text">
+		  Trendy
+		</div>
+		<%= image_tag 'show/icon.png', :height => "40", :alt => 'Style trendy' %>
+	      </div>
+
+	      <% when "Working Girl" %>
+	      
+
+	      <div id="style-advice" class="working">
+		<div id="sa-text">
+		  Working
+		</div>
+		<%= image_tag 'show/icon.png', :height => "40", :alt => 'Style Working' %>
+	      </div>
+
+	    <% end %>
+<% end %>
+</div>
+	  
+
+
+
+
+
+
         </div>
         <div id="thumbnails" data-hook>
           <%= render :partial => 'thumbnails', :locals => { :product => @product } %>
@@ -20,7 +86,7 @@
     </div>
   </div>
 
-  <div class="columns ten omega" data-hook="product_right_part">
+  <div class="columns sixteen alpha omega" data-hook="product_right_part">
     <div class="row" data-hook="product_right_part_wrap">
 
       <div id="product-description" data-hook="product_description">
@@ -40,7 +106,9 @@
       <%= render :partial => 'taxons' %>
     </div>
 
+    <center>
     <div class="fb-comments" data-href="http://<%= request.host %>:<%= request.port.to_s + request.fullpath %>" data-num-posts="4" data-width="470"></div>
+    </center>
   </div>
 
 </div>

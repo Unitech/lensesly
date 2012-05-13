@@ -229,7 +229,7 @@ fr:
   add_rule_of_type: Ajouter règles de type
   add_scope: "Ajouter une portée"
   add_state: "Ajouter une région"
-  add_to_cart: "Ajouter au panier"
+  add_to_cart: "Ajouter à mon panier"
   add_zone: "Ajouter une zone"
   additional_item: "Coût d'item additionnel"
   address: Adresse
@@ -512,7 +512,7 @@ fr:
   login_failed: "L'authentification a échoué"
   login_name: Identifiant
   logout: Se déconnecter
-  look_for_similar_items: Chercher des articles similaires
+  look_for_similar_items: Les autres Univers
   maestro_or_solo_cards: Cartes Maestro/Solo
   mail_delivery_enabled: "La distribution des emails est activée"
   mail_delivery_not_enabled: "La distribution des emails est désactivée"
@@ -939,7 +939,7 @@ fr:
   shipping_methods: "Méthodes de livraison "
   shipping_methods_description: "Gérer les méthodes de livraisons"
   shipping_total: "Total de la livraison"
-  shop_by_taxonomy: "Acheter par %{taxonomy}"
+  shop_by_taxonomy: "Trier par %{taxonomy}"
   shopping_cart: "Panier"
   show: Afficher
   show_active: "Show Active"

@@ -25,5 +25,9 @@ class ContentController < Spree::BaseController
   def conditions
     @title = 'Conditions générales'
   end
+  
+  def concours
+    @title = 'Concours de beauté BeliView'
+  end
 
 end

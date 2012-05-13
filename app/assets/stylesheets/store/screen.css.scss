@@ -45,7 +45,7 @@ $ff_base:       Verdana;
   |- Product Details
   |                                  */
       $product_detail_name_font_size:         24px;
-      $product_detail_description_font_size:  12px;
+      $product_detail_description_font_size:  14px;
       $product_detail_price_font_size:        20px;
       $product_detail_title_font_size:        14px;
 /*|------------------------------------
@@ -140,8 +140,9 @@ mark {background-color: $link_text_color; color: $layout_background_color; font-
   h6 { font-size: $sub_heading_font_size - 2; line-height: $sub_heading_font_size - 2 + 10; }
 
   h1, h2, h3, h4, h5, h6 {    
-    font-weight: bold;
-    color: $title_text_color;
+      font-weight: bold;
+      color: $title_text_color;
+      
   }
 
   /*--------------------------------------*/
@@ -316,7 +317,8 @@ mark {background-color: $link_text_color; color: $layout_background_color; font-
 
   nav #main-nav-bar {
       font-family: 'Federo', sans-serif;
-
+      
+      
     margin-top: 20px;
     border-bottom: 1px solid lighten($body_text_color, 60);
     padding-bottom: 6px;
@@ -337,7 +339,7 @@ mark {background-color: $link_text_color; color: $layout_background_color; font-
       &#link-to-cart {
         float: right;
         padding-left: 24px;
-        background: url("cart.png") no-repeat left center;
+        background: url("cart-black.png") no-repeat left center;
 
         &:hover {
           border-color: $link_text_color;
@@ -511,7 +513,7 @@ mark {background-color: $link_text_color; color: $layout_background_color; font-
         display: block;
 
         &.info {
-            height: 35px;
+            //height: 35px;
             margin-top: 10px;
             font-size: $product_list_name_font_size;
             color: $product_link_text_color;
@@ -522,7 +524,7 @@ mark {background-color: $link_text_color; color: $layout_background_color; font-
       }
 
       .product-image {
-        border: 1px solid lighten($body_text_color, 60);
+          //border: 1px solid lighten($body_text_color, 60);
         padding: 5px;        
         min-height: 110px;
         background-color: $product_background_color;
@@ -563,7 +565,7 @@ mark {background-color: $link_text_color; color: $layout_background_color; font-
 
     span.category {
       display: block;
-      font-weight: bold;
+      //font-weight: bold;
       text-transform: uppercase;
       border-bottom: 1px solid #ededed;
       margin-bottom: 5px;
@@ -599,7 +601,7 @@ mark {background-color: $link_text_color; color: $layout_background_color; font-
     }
 
     [data-hook="product-description"] {
-      font-size: $product_detail_description_font_size;
+      font-size: 15px;
       color: $product_body_text_color;
     }
   }

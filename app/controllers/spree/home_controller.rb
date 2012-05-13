@@ -5,7 +5,7 @@ module Spree
 
     def index
       @searcher = Spree::Config.searcher_class.new(params)
-      @products = @searcher.retrieve_products
+      @products = @searcher.retrieve_products.reverse_order
       respond_with(@products)
     end
   end

@@ -11,6 +11,7 @@ Spree.config do |config|
   # config.site_name = "Spree Demo Site"
 #  config.set(:enabled_locales, ['en','es','fr', 'pt'])
   config.set(logo: "logo-450.png")  
+  config.set(:allow_ssl_in_production, false)
 end
 
 #Spree::Config.set :enabled_locales => ['en','es','fr', 'pt']

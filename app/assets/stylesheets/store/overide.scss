@@ -2,16 +2,31 @@
 @import url(//fonts.googleapis.com/css?family=Federo);
 @import 'functions';
 
-#products .prod-el {
-    width : 330px;
-}
+$width-uni-slide : 187px; 
 
-ul#products li a.info {
+	    // Babacool d8b7d2
+	    // Fashion girl F7D095
+	    // Student Style A5A5A4
+	    // Working Girl CAE5E3
+	    // Trendy F6CeD6
+
+
+
+
+nav #main-nav-bar {
+    a {
+	@include transition(0.3s);
+}
 }
 
 #wrapper {
     min-height : 800px;
     padding : 0 10px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Federo', sans-serif;
+    font-weight : normal;
 }
 
 body {
@@ -28,15 +43,21 @@ body {
     background-color : transparent !important;
 }
 
+.container-copyright {
+    text-align : center;
+    padding : 0px !important;
+    margin-top : 0px;
+}
+
 figure#logo {
     padding-left : 40px;
 }
 
-$width-uni-slide : 187px; 
-
 .slider-trends {
     height : 352px;
-    margin-left : 2px;
+    margin-left : 5px;
+
+    -webkit-box-shadow:rgb(209, 209, 209) 0px 0px 21px 6px;-moz-box-shadow:rgb(209, 209, 209) 0px 0px 21px 6px;box-shadow:rgb(209, 209, 209) 0px 0px 21px 6px;
     .univers {
 	float : left;
 	display : block;
@@ -53,23 +74,17 @@ $width-uni-slide : 187px;
 	    filter: alpha(opacity=30);
 	    -moz-opacity: 0.95;
 	    -khtml-opacity: 0.95;
-	    
-	    // Babacool d8b7d2
-	    // Fashion girl F7D095
-	    // Student Style A5A5A4
-	    // Working Girl CAE5E3
-	    // Trendy F6CeD6
-	    
-
 	    #content {
 		padding : 10px;
 		text-align : left;
 		color : black;
+		font-size : 15px;
 		h3 {
 		    font-size : 26px;
 		    font-weight : normal;
-
 		    text-align : left;
+		    color : #222;
+		    margin-bottom : 2px;
 		}
 	    }
 	}
@@ -83,20 +98,30 @@ $width-uni-slide : 187px;
     margin-left : 2px;
     border : 1px solid #D9D9DB;
     margin-top : 20px;
+    color : #222;
     .uniav {
 	float : left;
 	width : $width-uni-slide;	
 	text-align : center;
 	vertical-align:middle;
 	height : 100px;
+	position : relative;
 	p {
 	    margin-top : 20px;
 	    padding : 2px;
 	    font-size : 15px;
+	    z-index : 2;
 	}
-    }
-    img {
-	width : $width-uni-slide - 150;
+	img {
+	    z-index : 1;
+	    opacity : 0.2;
+	    position : absolute;
+	    top : 50%;
+	    left : 50%;
+	    margin-left : -33px;
+	    margin-top : -33px;
+	    width : $width-uni-slide - 120;
+	}	
     }
 }
 
@@ -115,7 +140,7 @@ $width-uni-slide : 187px;
 }
 
 footer {
-    min-height : 200px;
+    
     //background-color : #8E8E8E;
     color : white;
     #footer-intern {
@@ -130,3 +155,235 @@ footer {
 	font-size : 17px;
     }
 }
+
+
+
+.mid-block {
+    -webkit-box-shadow:rgb(209, 209, 209) 0px 0px 21px 4px;-moz-box-shadow:rgb(209, 209, 209) 0px 0px 21px 4px;box-shadow:rgb(209, 209, 209) 0px 0px 21px 4px;
+
+    margin-top : 20px;
+    margin-left : -2px;
+    height : 250px;
+    border: 1px solid #D9D9DB;
+    width : 433px !important;
+    overflow : hidden;
+    position : relative;
+    &:hover {
+	cursor : pointer;
+    }
+    img {
+	
+    }
+    #mask {
+	font-family: 'Federo', sans-serif;
+	position : absolute;
+	bottom : 0%;
+	left : 0%;
+	background-color : rgba(161, 160, 160, 0.9);
+	h3 {
+	    color : rgba(33,33,33,1);
+	    font-size : 26px;
+	    font-weight : normal;
+	}
+	height : 100px;
+	padding : 8px;
+	width : 433px;
+	
+	#content {
+	    color : black;
+	    font-size : 15px;	   	  
+	}
+    }
+}
+
+.tendances-block {
+    margin-left : 20px !important;
+    margin-right : 20px !important;
+}
+
+.opticians-block {
+}
+
+#main-nav-bar {
+    a:hover {
+	color : #8FD0D0 !important;
+    }
+}
+
+/*
+ * Listing Glasses
+ */
+.taxon-title {
+    font-family: 'Federo', sans-serif;
+    font-size : 23px;
+    margin-bottom : 10px;
+}
+
+
+#products .prod-el {
+    width : 330px;
+    font-family: 'Federo', sans-serif;
+    a.info {
+	padding-top : 4px;
+	padding-bottom : 10px;
+	margin-bottom : 3px;	
+    }
+    position : relative;
+    #stock-round {
+	width : 20px;
+	height : 20px;
+	@include rounded(20px);
+	margin-bottom : 2px;
+    }
+    #stylist-advice-products {
+	position : absolute;
+	top : 20px;
+	right : 0%;
+    }
+
+}
+
+	.baba {
+	    background-color : #8ECFCF;
+	}
+	.fashion {
+	    background-color : #F7D095;
+	}
+	.student {
+	    background-color : #A5A5A4;
+	}
+	.working {
+	    background-color : #CAE5E3;
+	}
+	.trendy {
+	    background-color : #F6CED6;
+	}
+
+
+
+#product_show {
+    #main-image {
+	position : relative;
+	
+	#product_style {
+	    position : absolute;
+	    top : 30px;
+	    right : 10px;
+	    width : 50px;
+	    #mini-logo {
+		position : relative;
+		padding : 5px;
+		height : 40px;
+		margin-right : 5px;
+		@include rounded(50px);
+		@include transition(0.3s);
+		&:hover {	
+		    //opacity : 0.5;
+		    cursor : pointer;
+		    padding-left : 100px;
+		    right : 95px;
+		}
+	    }
+	    #style-advice {
+		margin-top : 5px;
+		position : relative;
+		padding : 5px;
+		height : 40px;
+		width : 40px;
+		margin-right : 5px;
+		opacity : 0.9;
+		color : #222;
+		overflow : hidden;
+		@include rounded(50px);
+		@include transition(0.3s);
+		&:hover {	
+		    cursor : pointer;
+		    padding-left : 150px;
+		    right : 145px;
+		}
+		#sa-text {
+		    font-family: 'Federo', sans-serif;
+		    position : absolute;
+		    left : 50px;
+		    top : 15px;
+		    font-size : 20px;
+		}
+	    }
+	}
+    }
+    #product-description {
+	font-size : 15px !important;
+    }
+
+
+    #add-to-cart-button {
+	border : none !important;
+	color : white;
+    }
+}
+
+
+/*
+ * Mini administration dashboard
+ */
+.mini-admin {
+    width : 300px;
+    height : 100px;
+    background-color : #EEE;
+    border : 1px solid #555;
+    @include rounded (3px);
+    text-align : left;
+    font-family: "Helvetica Neue";
+    padding : 3px;
+    font-size : 15px;
+    h1, h2, h3, h4 {
+	font-family: "Helvetica Neue";
+    }
+    #delete-db {
+	color : red;
+	&:hover {
+	    cursor : pointer;
+	}
+	margin-bottom : 5px;
+    }
+    #change-universe {
+	#stock-round {
+	    float : left;
+	    margin-right : 2px;
+	    &:hover {
+		cursor : pointer;
+		opacity : 0.5;
+	    }
+	}
+	
+	
+	.setted {
+	    border : 2px solid green;
+	    background-color : green;
+	}
+	.notsetted {
+	    border : 2px solid red;
+	    background-color : red;
+	}
+	text-align : center;
+	#univ {
+	    color : white;
+	    witdh : 20px;
+	    height : 20px;
+	    padding : 3px;
+	    @include rounded(5px);
+	    float : left;
+	    margin-right : 5px;
+	    &:hover {
+		cursor : pointer;
+		opacity : 0.5;
+	    }
+	}
+    }
+    
+}
+
+/*
+ * User new session
+ */
+

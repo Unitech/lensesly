@@ -1,9 +1,26 @@
-<h3 class="taxon-title"><%= accurate_title %></h3>
+<h3 class="taxon-title">
+  <%= @taxon.name %>
+</h3>
+
+<% case @taxon.name %>
+  <% when "Baba" %>
+    <%= image_tag 'taxon/lunettebaba.png' %>
+    <% when "Fashion Girl" %>
+    <%= image_tag 'taxon/lunettefashion.png' %>
+    <% when "Student Style" %>
+    <%= image_tag 'taxon/lunettetrendy.png' %>
+    <% when "Trendy" %>
+    <%= image_tag 'taxon/lunetteetudiante.png' %>
+    <% when "Working Girl" %>
+    <%= image_tag 'taxon/lunetteworking.png' %>
+<% end %>
+  
 
 <% content_for :sidebar do %>
   <div data-hook="taxon_sidebar_navigation">
-    <%= render :partial => 'spree/shared/taxonomies' %>
     <%= render :partial => 'spree/shared/filters' if @taxon.children.empty? %>
+    <br/>
+    <%= render :partial => 'spree/shared/taxonomies' %>
   </div>
 <% end %>
 

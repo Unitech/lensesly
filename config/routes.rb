@@ -6,13 +6,16 @@ Lensesly::Application.routes.draw do
     get '/aide' => :help, :as => :help
     get '/a-propos' => :about, :as => :aboute
     get '/contact' => :contact, :as => :contact
-
+    get '/concours' => :concours
   end
 
   match '/conditions' => 'content#conditions', :as => :conditions
 
   mount Spree::Core::Engine, :at => '/'
 
+
+  match '/adm/ajx/dl' => 'spree/products#ajax_delete_product'
+  match '/adm/ajx/switch' => 'spree/products#switch_taxon'
 
   match '/test' => 'spree/products#test'
   match '/test_taxon/*id' => 'spree/taxons#test'
