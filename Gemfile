@@ -22,6 +22,8 @@ gem 'spree_social', :git => 'https://github.com/spree/spree_social.git'
 #gem 'spree_recently_viewed', :git => 'https://github.com/spree/spree_recently_viewed.git'
 #gem 'spree_email_to_friend', :git => 'https://github.com/spree/spree_email_to_friend.git'
 
+gem 'simple_navigation'
+
 #
 # SEO
 #

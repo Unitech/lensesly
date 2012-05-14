@@ -10,13 +10,17 @@
 
     <a href="/t/univers/baba" title="Univers Baba">
       <span class="univers">
-	<%= image_tag 'slider/univerbaba-200.png', :title => 'Univers Baba' %>
-	<div id="mask" style="background-color : rgba(215,182,208,0.9)">
+	<%= image_tag 'slider/univerbaba-200.png', :title => 'Univers Baba', :id => 'people' %>
+	<div id="mask" style="background-color : rgba(215,182,208,0.95)">
 	  <div id="content">
 	    <h3>Baba</h3>
 	    <p>
 	      Vous êtes plutôt femme décontractée mais vous faites attention à vous.
+	   
 	    </p>
+	    
+	    <%= render :partial => 'spree/shared/mini_glasse', :locals => { :product => get_glasses_on_env('Baba') } %>
+
 	  </div>
 	</div>
       </span>
@@ -24,26 +28,32 @@
 
     <a href="/t/univers/fashion-girl" title="Univers Fashion Girl">
     <span class="univers">
-      <%= image_tag 'slider/universfashion-200.png', :title => 'Univers Fashion' %>
-      <div id="mask" style="background-color : rgba(244,207,151, 0.9)">
+      <%= image_tag 'slider/universfashion-200.png', :title => 'Univers Fashion', :id => 'people' %>
+      <div id="mask" style="background-color : rgba(244,207,151, 0.95)">
 	<div id="content">
 	  <h3>Fashion Girl</h3>
 	  <p>
 	    On peut vous définir par <br/> <i>"La mode se démode, le style jamais."</i>
 	  </p>
+
+	    <%= render :partial => 'spree/shared/mini_glasse', :locals => { :product => get_glasses_on_env('Fashion Girl') } %>
+
 	</div>
       </div>
     </span>
 
     <a href="/t/univers/student-style" title="Univers Student Style">
     <span class="univers">
-      <%= image_tag 'slider/universetudiante-200.png', :title => 'Univers Étudiante' %>
-      <div id="mask" style="background-color : rgba(161,160,160, 0.9)">
+      <%= image_tag 'slider/universetudiante-200.png', :title => 'Univers Étudiante', :id => 'people' %>
+      <div id="mask" style="background-color : rgba(161,160,160, 0.95)">
 	<div id="content">
 	  <h3>Student Style</h3>
 	  <p>
-	    Étudiante mais stylée, vous voulez incarner le parfait équilibre entre l'intellect et le style.
+	    Étudiante mais stylée, vous incarnez le parfait équilibre entre l'intellect et le style.
 	  </p>
+
+	    <%= render :partial => 'spree/shared/mini_glasse', :locals => { :product => get_glasses_on_env('Student Style') } %>
+
 	</div>
       </div>
     </span>
@@ -52,13 +62,16 @@
 
     <a href="/t/univers/trendy" title="Univers Trendy">
       <span class="univers">
-	<%= image_tag 'slider/universtrendy-200.png', :title => 'Univers Trendy' %>
-	<div id="mask" style="background-color : rgba(245,207,215, 0.9)">
+	<%= image_tag 'slider/universtrendy-200.png', :title => 'Univers Trendy', :id => 'people' %>
+	<div id="mask" style="background-color : rgba(245,207,215, 0.95)">
 	  <div id="content">
 	    <h3>Trendy</h3>
 	    <p>
-	      Vous avez le dernier sac de la marque XXX de cette saison.	   
+	      Vous avez le dernier sac de la marque <i>Chloé</i> de cette saison.	   
 	    </p>
+
+	    <%= render :partial => 'spree/shared/mini_glasse', :locals => { :product => get_glasses_on_env('Trendy') } %>
+
 	  </div>
 	</div>
       </span>
@@ -66,13 +79,16 @@
 
     <a href="/t/univers/working-girl" title="Univers Working Girl">
       <span class="univers">
-	<%= image_tag 'slider/universworking-200.png', :title => 'Univers Working Girl' %>
-	<div id="mask" style="background-color : rgba(200,225,222,0.9)">
+	<%= image_tag 'slider/universworking-200.png', :title => 'Univers Working Girl', :id => 'people' %>
+	<div id="mask" style="background-color : rgba(200,225,222,0.95)">
 	  <div id="content">
 	    <h3>Working Girl</h3>
 	    <p>
 	      Le bureau, aussi, est un lieu de defilé de mode.
 	    </p>
+
+	    <%= render :partial => 'spree/shared/mini_glasse', :locals => { :product => get_glasses_on_env('Working Girl') } %>
+
 	  </div>
 	</div>
       </span>
@@ -115,12 +131,14 @@
     <%= image_tag 'hometendances.png' %>
     <div id="mask">
       <div id="content">
-	<h3>Tendance</h3>
+	<h3>Conseils de nos stylistes</h3>
 	<p>
-	  
-	  (TOREDO) Restez tenue au courant de l'actualité mode
+	  Recevez tous les mois des conseils de stylistes reconnus gratuitement !
 
-	    
+	  <%= form_for @newsletter, :url => '/newsletters/create' do |f| %>
+	  <%= f.email_field :mail %>
+	  <%= f.submit "Je m'inscris" %>
+<% end %>
 	</p>
       </div>
     </div>    
@@ -130,16 +148,10 @@
     <%= image_tag 'homeopticien.png' %>
     <div id="mask">
       <div id="content">
-	<h3>Nos stylistes</h3>
+	<h3>Nos Opticiens</h3>
+	<p>Nos opticiens dîplomés sont à votre service pour toutes vos questions. Ils vous aideront à affiner au plus votre vue.</p>
       </div>
     </div>    
   </div>
 </div>
-
-
-
-<div id="home_product_tmp" class="columns omega sixteen alpha ">
-  <%= render :partial => 'spree/shared/products', :locals => { :products => @products } %>
-</div>
-
 

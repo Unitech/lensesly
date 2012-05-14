@@ -39,17 +39,17 @@
 	      <a href="/products" title="BeliView - Toutes les Lunettes">Lunettes</a>
 	    </li>
 	    |
-	    <li id="opticians">
-	      <a href="/opticiens" title="Beliview - Nos Opticiens">Nos Opticiens</a>
-	    </li>
-	    |
+	    <!-- <li id="opticians"> -->
+	    <!--   <a href="/opticiens" title="Beliview - Nos Opticiens">Nos Opticiens</a> -->
+	    <!-- </li> -->
+	    <!-- | -->
 	    <li id="blog">
 	      <a href="http://blog.beliview.fr" title="Beliview - Blog">Tendances</a>
-	    </li>
-	    |
-	    <li id="help">
-	      <a href="/aide" title="Beliview - Aide">Aide</a>
-	    </li>
+	    <!-- </li> -->
+	    <!-- | -->
+	    <!-- <li id="help"> -->
+	    <!--   <a href="/aide" title="Beliview - Aide">Aide</a> -->
+	    <!-- </li> -->
 	    |
 	    <li id="help">
 	      <a href="/concours" title="Beliview - Concours">Concours de beauté Beliview</a>
@@ -84,21 +84,78 @@
     </div>
 
 
+    <div class="container container-footer">
+      <footer id="footer" class="columns omega twelwe" data-hook>
+	<div id="footer-intern">	  
+	  <ul>
+	    
+	    <center>
+	      
+	    <li>
+	      <a href="/mentions" title="Mentions légales">
+		Mention légales |
+	      </a>
+	    </li>
+
+	    <li>
+	      <a href="/contact" title="Contact">
+		Contact |
+	      </a>
+	    </li>
+
+	    <li>
+	      <a href="/conditions-generales" title="Conditions générales de vente">
+		Conditions générales de ventes |
+	      </a>
+	    </li>
+
+	    <li>
+	      <a href="/a-propos" title="À propos">
+		À propos
+	      </a>
+	    </li>
+
+	    </center>
+	    
+
+
+
+
+	  </ul>
+	</div>
+      </footer>
+    </div>
+
+
   </div>
   
-  <div class="container container-footer">
+  <div class="container" style="background-color : transparent; color : white;">
     <footer id="footer" class="columns omega twelwe" data-hook>
-      Les droits sur les images, et plus particulièrement le logo sont en license fermées et n'ont pas lieu d'être réutilisé en dehors du cadre fixé. Le site est entièrement en license fermée et ne peut faire l'office d'une quelconque copie sous peine de poursuites judiciaire. Les méthodes utilisées au sein de ce site (social media strategy, présentation de produit et tous élèments s'y rapprochant) ne peuvent en aucun cas être plagié. L'équipe vous remercie pour votre compréhension.<br/> ©Beliview 2012
-      </footer>
-  </div>
 
-  <div class="container container-footer">
-    <footer id="footer" class="columns omega twelwe" data-hook>
-      <div id="footer-intern">
-	<%= render :partial => 'spree/shared/footer' %>
+
+      <div class="columns eight omega alpha">
+	 <%= image_tag 'trust/fashionvogue.png', :height => '90' %>
       </div>
+
+      <div class="columns eight omega alpha">
+	<div class="trust-logo">
+	  <%= image_tag 'trust/american-express-curved-32px.png' %>
+	  <%= image_tag 'trust/cirrus-curved-32px.png' %>
+	  <%= image_tag 'trust/maestro-curved-32px.png' %>
+	  <%= image_tag 'trust/mastercard-curved-32px.png' %>
+	  <%= image_tag 'trust/paypal-curved-32px.png' %>
+	  <%= image_tag 'trust/visa-electron-curved-32px.png' %>
+	  <%= image_tag 'trust/western-union-curved-32px.png' %>
+	  <%= image_tag 'trust/norton_seal.gif', :height => '32' %>
+	</div>
+      </div>
+
+      <div class="columns sixteen omega alpha">
+	Les droits sur les images, et plus particulièrement le logo sont en license fermées et n'ont pas lieu d'être réutilisé en dehors du cadre fixé. Le site est entièrement en license fermée et ne peut faire l'office d'une quelconque copie sous peine de poursuites judiciaire. Les méthodes utilisées au sein de ce site (social media strategy, présentation de produit et tous élèments s'y rapprochant) ne peuvent en aucun cas être plagié. L'équipe vous remercie pour votre compréhension.<br/> ©Beliview 2012
+	</div>
     </footer>
   </div>
+
 
   <%= render :partial => 'spree/shared/google_analytics' %>
 

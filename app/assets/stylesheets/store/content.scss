@@ -1,0 +1,23 @@
+
+#sidebar-left-content {
+    font-size : 16px; 
+    border-right : 1px solid #D9D9DB;
+    height : 700px;
+}
+
+#concours {
+    padding-top : 6px;
+    width : 500px;
+    border-top : 1px solid #D9D9DB;
+    font-size : 16px;
+    color : #222;
+    
+    label {
+	display : inline-block;
+	padding-top : 3px;
+	font-family: 'Federo', sans-serif;
+    }
+    input {
+	margin-bottom : 3px;
+    }
+}

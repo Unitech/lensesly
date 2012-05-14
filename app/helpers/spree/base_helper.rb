@@ -181,4 +181,6 @@ module Spree
        Gem.available?(name)
     end
   end
+
+  
 end

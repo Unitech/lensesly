@@ -1,15 +1,29 @@
 Lensesly::Application.routes.draw do
 
 
+
+
+  get "beauty_competition/index"
+
   scope :controller => :content do 
     get '/opticiens' => :opticians, :as => :loli
     get '/aide' => :help, :as => :help
     get '/a-propos' => :about, :as => :aboute
     get '/contact' => :contact, :as => :contact
     get '/concours' => :concours
+    get '/mentions' => :mention
+    get '/conditions-generales' => :conditions
+  end
+
+  scope :controller => :beauty_controller, :path => '/beauty' do
+    get '/create' => :add_form
   end
 
   match '/conditions' => 'content#conditions', :as => :conditions
+
+  #resources :newsletters
+  
+  post '/nws/post' => 'newsletters#create_ajax'
 
   mount Spree::Core::Engine, :at => '/'
 

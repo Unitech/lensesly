@@ -1,2 +1,38 @@
-<h1>Concours de beauté Beliview !</h1>
+<!-- <h1>Concours de beauté Beliview !</h1> -->
+
+<br/>
+<center>
+  <%= image_tag 'logo-miss.png' %>
+  <br/>
+  <div id="concours">
+    <p>
+      Tenez vous prêtes pour le lancement du concours mensuel Beliview ! 
+      <br/>
+      Inscrivez-vous en avant-première pour être tenues au courant de l'évènement.
+    </p>
+
+    <p>
+      <%= form_for :beauty_competition, :url => '/beauty/create' do |f| %>	
+      <%= f.label :f_name,  "Prénom" %>
+      <br/>
+      <%= f.text_field :f_name %>
+      <br/>
+      <%= f.label :l_name,  "Nom" %>
+      <br/>
+      <%= f.text_field :l_name %>
+      <br/>
+      <%= f.label :mail,  "Email" %>
+      <br/>
+      <%= f.text_field :mail %>
+      <br/>
+      <%= f.label :number,  "Numéro de téléphone" %>
+      <br/>
+      <%= f.text_field :number %>
+      <br/><br/>
+      <%= f.submit "Envoyer" %>
+      <% end %>
+    </p>
+  </div>
+
+</center>
 

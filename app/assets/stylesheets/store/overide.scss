@@ -16,11 +16,11 @@ $width-uni-slide : 187px;
 nav #main-nav-bar {
     a {
 	@include transition(0.3s);
-}
+    }
 }
 
 #wrapper {
-    min-height : 800px;
+    min-height : 700px;
     padding : 0 10px;
 }
 
@@ -32,16 +32,17 @@ h1, h2, h3, h4, h5, h6 {
 body {
     margin-bottom : 80px;
 }
+
+#mini-links {
+    text-align : center;
+}
+
 .container {
     padding : 10px;
     background-color : white;
-    margin-bottom : 20px;
     @include rounded_bottom(10px);
 }
 
-.container-footer {
-    background-color : transparent !important;
-}
 
 .container-copyright {
     text-align : center;
@@ -62,12 +63,35 @@ figure#logo {
 	float : left;
 	display : block;
 	font-family: 'Federo', sans-serif;
-	img, #mask {
+	img#people, #mask {
 	    width : $width-uni-slide;
 	}
+	p {
+	    height : 54px;
+	}
 	position : relative;
+	#mini-choice {
+	    border-top : 1px solid rgba(107,107,107,0.72);
+	    display : block;
+	    text-align : center;
+	    padding-top : 6px;
+	    #name {
+		margin-top : 2px;		
+	    }
+	    #access-btn {
+		background-color : rgba(28,28,28,0.5);
+		color : white;
+		margin-top : 5px;
+		padding : 3px 5px;
+		border : 1px solid rgba(107,107,107,0.72);
+		@include rounded(4px);
+		&:hover {
+		    background-color : rgba(28,28,28,0.7);
+		}
+	    }
+	}
 	#mask {
-	    height : 160px;
+	    height : 260px;
 	    position : absolute;
 	    bottom : 2px;
 	    //background-color : #d8b7d2;
@@ -137,24 +161,50 @@ figure#logo {
 
 #top-nav-bar {
     margin-left : 60px;
+    input[type="search"], input[type="email"] {
+	width : 220px;
+    }
+    input[type="submit"] {
+	width : 90px;
+    }
 }
 
-footer {
-    
-    //background-color : #8E8E8E;
-    color : white;
-    #footer-intern {
-	padding : 0 7px;
+.container-footer {
+    background-color : transparent !important;
+    ul {
     }
-    h2 {
-	margin-top : 4px;
-	border-bottom : 1px solid white;
+    li {
+	display : inline;
+	
     }
-    h3 {
-	text-align : center;
-	font-size : 17px;
+    width : 350px;
+    margin : 0 auto;
+
+
+    footer {
+	color : white;
+	
+	#footer-intern {
+	    padding : 0 7px;	    
+	}
+
+	h2 {
+	    margin-top : 4px;
+	    border-bottom : 1px solid white;
+	}
+	h3 {
+	    text-align : center;
+	    font-size : 17px;
+	}
     }
 }
+
+.trust-logo {
+    padding-top : 27px;
+    text-align : right;
+    margin-bottom : 7px;
+}
+
 
 
 

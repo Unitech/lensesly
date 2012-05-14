@@ -12,4 +12,9 @@ module ApplicationHelper
     return "<div id='univ' class='ajaxround notsetted' data-id='#{u.id}'>#{univ_code}</div>".html_safe
   end
 
+  def get_glasses_on_env env
+    tax = Spree::Taxon.find_by_name(env)
+    return tax.products.first
+  end
+
 end

@@ -1,2 +1,21 @@
-<h1>Content#contact</h1>
-<p>Find me in app/views/content/contact.html.erb</p>
+<%= render :partial => 'sidebar' %>
+
+<h1>Contactez nous</h1>
+<p>
+  Envoyez nous un mail de préférence bely.view AT gmail.com
+</p>
+
+<form>
+  <label>Votre mail</label>
+  <br/>
+  <input type="text" style="width : 400px">
+  <br/>
+  <label>Contenu</label>
+  <br/>
+  <textarea type="text" style="width : 400px; height : 300px;">
+  </textarea>
+  <br/>
+  <input type="button" value="Envoyer"/>
+</form>
+  
+

@@ -7,7 +7,7 @@
 *= require store/spree_core
 *= require store/screen 
 *= require store/overide
-
+*= require store/content
  *= require_self
 
  *= require store/spree_social
