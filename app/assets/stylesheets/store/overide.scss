@@ -57,7 +57,7 @@ figure#logo {
 .slider-trends {
     height : 352px;
     margin-left : 5px;
-
+    background : none;
     -webkit-box-shadow:rgb(209, 209, 209) 0px 0px 21px 6px;-moz-box-shadow:rgb(209, 209, 209) 0px 0px 21px 6px;box-shadow:rgb(209, 209, 209) 0px 0px 21px 6px;
     .univers {
 	float : left;
@@ -161,11 +161,26 @@ figure#logo {
 
 #top-nav-bar {
     margin-left : 60px;
+    form {
+	margin-top : 3px;
+    }
     input[type="search"], input[type="email"] {
 	width : 220px;
     }
     input[type="submit"] {
 	width : 90px;
+    }
+    .fb-like {
+	margin-top : 7px;
+	margin-right : -3px;
+    }
+    .testodo {
+	display : inline-block;
+	margin-top : 3px;
+    }
+    .twitter-follow-button {
+	margin-top : 4px;
+	display : inline-block;
     }
 }
 
@@ -175,27 +190,21 @@ figure#logo {
     }
     li {
 	display : inline;
-	
     }
-    width : 350px;
-    margin : 0 auto;
+    .twitter-te {
+	margin-left : 50px;
+    }
+}
 
-
-    footer {
-	color : white;
-	
-	#footer-intern {
-	    padding : 0 7px;	    
-	}
-
-	h2 {
-	    margin-top : 4px;
-	    border-bottom : 1px solid white;
-	}
-	h3 {
-	    text-align : center;
-	    font-size : 17px;
-	}
+footer {
+    color : white;
+    
+    #footer-intern {
+	padding : 0 7px;	    
+    }
+    
+    .fb-like-box {
+	background-color : white;
     }
 }
 
@@ -315,6 +324,11 @@ figure#logo {
     #main-image {
 	position : relative;
 	
+	#facebook_reco {
+	    position : absolute;
+	    bottom : 4px;
+	    right : 4px;
+	}
 	#product_style {
 	    position : absolute;
 	    top : 30px;

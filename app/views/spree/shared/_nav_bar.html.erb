@@ -1,3 +1,22 @@
 <li id="search-bar" data-hook>
-  <%= render :partial => 'spree/shared/search' %>
+  <% @taxons = @taxon && @taxon.parent ? @taxon.parent.children : Spree::Taxon.roots %>
+  <%= form_tag products_path, :method => :get do %>
+    <%= search_field_tag :keywords, params[:keywords], :placeholder => t(:search) %>
+    <%= submit_tag t(:search), :name => nil %>
+  <% end %>
+
+  <%= form_for :newsletter, :url => '/newsletters/create' do |f| %>
+  <%= f.email_field :mail, :placeholder => 'Recevez les conseils de nos stylistes' %>
+  <%= f.submit "Je m'inscris" %>
+<% end %>
+
+</li>
+
+<li>
+  <div style="float : left;" class="fb-like" data-href="https://www.facebook.com/pages/Beliview/239096579527613" data-send="false" data-layout="button_count" data-width="110" data-show-faces="true" data-action="recommend" data-font="arial"></div>
+  
+  <span class="testodo">
+    <a href="https://twitter.com/Beliview" class="twitter-follow-button" data-show-count="false" data-lang="fr">Suivez nous @Beliview</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  </span>
 </li>

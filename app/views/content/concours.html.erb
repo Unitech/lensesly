@@ -32,7 +32,49 @@
       <%= f.submit "Envoyer" %>
       <% end %>
     </p>
+
   </div>
+
+<p style="font-size : 17px;">Vous utilisez Twitter ? Posez vos questions directement !</p>
+<a href="https://twitter.com/intent/tweet?button_hashtag=MissBeliview" class="twitter-hashtag-button" data-lang="fr" data-related="beliview">Posez votre question sur #MissBeliview</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+<br/><br/>
+<script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
+<script>
+new TWTR.Widget({
+  version: 2,
+  type: 'search',
+  search: '#MissBeliview',
+  interval: 3000,
+
+  title: 'Concours Miss Beliview',
+  subject: 'Posez vos questions sur #MissBeliview',
+  width: 433,
+  height: 365,
+
+
+  theme: {
+    shell: {
+      background: '#8f8f8f',
+
+      color: '#ffffff'
+    },
+    tweets: {
+
+      background: '#ffffff',
+      color: '#444444',
+      links: '#1985b5'
+    }
+  },
+  features: {
+    scrollbar: false,
+    loop: true,
+    live: true,
+    behavior: 'default'
+  }
+}).render().start();
+</script>
+
 
 </center>
 
