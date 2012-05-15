@@ -15,3 +15,5 @@
 //= require store/spree_social
 
 //= require store/admin
+
+//= require store/common

@@ -278,16 +278,25 @@ footer {
     margin-bottom : 10px;
 }
 
+#products {
+    li {
+	
+    }
+}
 
 #products .prod-el {
-    width : 330px;
+    position : relative;
+    width : 326px;
+    @include transition(0.3s);
+    &:hover {
+
+    }
     font-family: 'Federo', sans-serif;
     a.info {
 	padding-top : 4px;
 	padding-bottom : 10px;
 	margin-bottom : 3px;	
     }
-    position : relative;
     #stock-round {
 	width : 20px;
 	height : 20px;
@@ -299,25 +308,24 @@ footer {
 	top : 20px;
 	right : 0%;
     }
-
 }
 
-	.baba {
-	    background-color : #8ECFCF;
-	}
-	.fashion {
-	    background-color : #F7D095;
-	}
-	.student {
-	    background-color : #A5A5A4;
-	}
-	.working {
-	    background-color : #CAE5E3;
-	}
-	.trendy {
-	    background-color : #F6CED6;
-	}
 
+.baba {
+    background-color : #8ECFCF;
+}
+.fashion {
+    background-color : #F7D095;
+}
+.student {
+    background-color : #A5A5A4;
+}
+.working {
+    background-color : #CAE5E3;
+}
+.trendy {
+    background-color : #F6CED6;
+}
 
 
 #product_show {

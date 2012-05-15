@@ -41,14 +41,6 @@ namespace :spree do
 
     puts "Creating Taxonomy"
 
-
-
-
-    
-
-
-    
-
     
     # categories = Hash.new
 
@@ -63,14 +55,14 @@ namespace :spree do
     # puts categories
     puts "Creating product"
     
-    limit = 50
+    #limit = 50
     
     CSV.foreach("#{Rails.root}/lib/data/products.csv", {:col_sep => ";"}) do |row|
 
-      limit -= 1
-      if limit == 0
-        break
-      end
+      # limit -= 1
+      # if limit == 0
+      #   break
+      # end
       #puts row[2].split(' - ', 2)[1].gsub('/', '')
       next if row[2].nil?
 
@@ -120,7 +112,7 @@ namespace :spree do
     trendy = Spree::Taxon.create(:parent_id => taxon_last_id, :name => 'Trendy')
     working = Spree::Taxon.create(:parent_id => taxon_last_id, :name => 'Working Girl')
 
-    random_prod = Spree::Product.all(:limit => 20, :offset => 6)
+    random_prod = Spree::Product.all(:limit => 2, :offset => 6)
 
     random_prod.each do |p|
       p.taxons << baba
