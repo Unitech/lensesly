@@ -1,6 +1,7 @@
+<% if product != false %>
 <span id="mini-choice">
   <div id="img-pic">
-      <%#= small_image(product, :width => 100) %>
+      <%= small_image(product, :width => 100) %>
   </div>
   <div id="name">
     <%= product.name %>
@@ -10,3 +11,4 @@
     </div>
   </div>
 </span>
+<% end %>

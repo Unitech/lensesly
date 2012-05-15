@@ -14,7 +14,8 @@ module ApplicationHelper
 
   def get_glasses_on_env env
     tax = Spree::Taxon.find_by_name(env)
-    return tax.products.first
+    return tax.products.first || false
+    #return false
   end
 
 end
