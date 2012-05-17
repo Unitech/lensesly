@@ -1,16 +1,24 @@
 $().ready(function() {
     $('.slider-trends .univers').each(function() {
-	var btn_height = $('#access-btn').height();
-	var btn_ln_height = $('#access-btn').css('line-height');
-	$(this).hover(function(e) {
-	    e.preventDefault();
-	    $('#mask', $(this)).animate({'height':'358'}, 100);
-	    $('#access-btn', $(this)).animate({'height':'115', 'line-height': '7.5'}, 100);
-	}, function(e) {
-	    e.preventDefault();
-	    $('#mask', $(this)).animate({'height':'260'}, 100);
-	    $('#access-btn', $(this)).animate({'height':btn_height, 'line-height' : btn_ln_height}, 100);
+	var self = $(this);
+
+	$('#mask', $(this)).show(function() {
+
+	    var btn_height = $('#access-btn').height();
+	    var btn_ln_height = $('#access-btn').css('line-height');
+	    
+	    self.hover(function(e) {
+		e.preventDefault();
+		$('#mask', $(this)).animate({'height':'358'}, 100);
+		$('#access-btn', $(this)).animate({'height':'115', 'line-height': '7.5'}, 100);
+	    }, function(e) {
+		e.preventDefault();
+		$('#mask', $(this)).animate({'height':'260'}, 100);
+		$('#access-btn', $(this)).animate({'height':btn_height, 'line-height' : btn_ln_height}, 100);
+	    });
+	    
 	});
+	//
     });
     
     // $('.mid-block').each(function() {

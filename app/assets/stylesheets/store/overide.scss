@@ -63,12 +63,20 @@ figure#logo {
     text-align : center;
     margin-bottom : 10px;
 }
+.sharing-links { margin:10px 0;position:absolute;}
+
+.fb_edge_widget_with_comment span.fb_edge_comment_widget {
+top: 15px !important;
+left: -350px !important;}
+
+div.nub {display : none !important;}
 
 .slider-trends {
     height : 352px;
     margin-left : 5px;
     background : none;
-//    -webkit-box-shadow:rgb(209, 209, 209) 0px 0px 21px 6px;-moz-box-shadow:rgb(209, 209, 209) 0px 0px 21px 6px;box-shadow:rgb(209, 209, 209) 0px 0px 21px 6px;
+    -webkit-box-shadow:rgb(209, 209, 209) 0px 0px 21px 6px;-moz-box-shadow:rgb(209, 209, 209) 0px 0px 21px 6px;box-shadow:rgb(209, 209, 209) 0px 0px 21px 6px;
+
     .univers {
 	float : left;
 	display : block;
@@ -104,10 +112,14 @@ figure#logo {
 		}
 	    }
 	}
+
+overflow : show;
 	#mask {
 	    height : 260px;
 	    position : absolute;
+	    display : none;
 	    bottom : 2px;
+	    
 	    //background-color : #d8b7d2;
 	    filter: alpha(opacity=30);
 	    -moz-opacity: 0.95;
