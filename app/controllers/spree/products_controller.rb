@@ -5,7 +5,7 @@ module Spree
     helper 'spree/taxons'
 
     before_filter :is_admin, :only => [:ajax_delete_product,
-                                      :switch_taxon]
+                                       :switch_taxon]
     
     respond_to :html
 

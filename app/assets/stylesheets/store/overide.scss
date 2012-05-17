@@ -24,6 +24,10 @@ nav #main-nav-bar {
     padding : 0 10px;
 }
 
+header {
+    //height : 180px;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Federo', sans-serif;
     font-weight : normal;
@@ -54,11 +58,17 @@ figure#logo {
     padding-left : 40px;
 }
 
+#top-slider-title {
+
+    text-align : center;
+    margin-bottom : 10px;
+}
+
 .slider-trends {
     height : 352px;
     margin-left : 5px;
     background : none;
-    -webkit-box-shadow:rgb(209, 209, 209) 0px 0px 21px 6px;-moz-box-shadow:rgb(209, 209, 209) 0px 0px 21px 6px;box-shadow:rgb(209, 209, 209) 0px 0px 21px 6px;
+//    -webkit-box-shadow:rgb(209, 209, 209) 0px 0px 21px 6px;-moz-box-shadow:rgb(209, 209, 209) 0px 0px 21px 6px;box-shadow:rgb(209, 209, 209) 0px 0px 21px 6px;
     .univers {
 	float : left;
 	display : block;
@@ -68,6 +78,7 @@ figure#logo {
 	}
 	p {
 	    height : 54px;
+	    font-size : 0.9em;
 	}
 	position : relative;
 	#mini-choice {
@@ -79,14 +90,17 @@ figure#logo {
 		margin-top : 2px;		
 	    }
 	    #access-btn {
-		background-color : rgba(28,28,28,0.5);
+		background-color : rgba(28,28,28,0.8);
 		color : white;
 		margin-top : 5px;
 		padding : 3px 5px;
 		border : 1px solid rgba(107,107,107,0.72);
 		@include rounded(4px);
+		font-family: "Helvetica Neue";
+		font-weight : bold;
+		font-size : 14px;
 		&:hover {
-		    background-color : rgba(28,28,28,0.7);
+		    background-color : rgba(28,28,28,1);
 		}
 	    }
 	}
@@ -103,6 +117,9 @@ figure#logo {
 		text-align : left;
 		color : black;
 		font-size : 15px;
+		p {
+		    font-family: "Helvetica Neue";
+		}
 		h3 {
 		    font-size : 26px;
 		    font-weight : normal;
@@ -459,3 +476,11 @@ footer {
  * User new session
  */
 
+/*
+ * Filter
+ */
+
+.filter_choices {
+    max-height : 200px;
+    overflow-y : scroll;
+}

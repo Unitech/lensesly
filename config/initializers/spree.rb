@@ -5,6 +5,9 @@
 #
 # In order to initialize a setting do: 
 # config.setting_name = 'new value'
+
+require 'product_filters'
+
 Spree.config do |config|
   # Example:
   # Uncomment to override the default site name.
@@ -13,5 +16,6 @@ Spree.config do |config|
   config.set(logo: "logo-450.png")  
   config.set(:allow_ssl_in_production, false)
 end
+
 
 #Spree::Config.set :enabled_locales => ['en','es','fr', 'pt']

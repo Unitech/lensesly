@@ -6,6 +6,7 @@
 <% @layout_override = true %>
 
 <div class="columns omeage sixteen alpha">
+  <h2 id="top-slider-title">Choisissez le style qui vous correspond le mieux</h2>
   <div class="slider-trends">
 
     <a href="/t/univers/baba" title="Univers Baba">
@@ -15,9 +16,14 @@
 	  <div id="content">
 	    <h3>Baba</h3>
 	    <p>
-	      Vous êtes plutôt femme décontractée mais vous faites attention à vous.
-	   
+	      Vous êtes plutôt femme décontractée mais vous faites attention à vous.	   
 	    </p>
+
+	    <div style="position:relative;">
+	      <div style="position : absolute; top : -27px; left : 98px; " class="fb-like" data-href="https://www.facebook.com/BeliviewBaba" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+	    </div>
+
+
 	    
 	    <%= render :partial => 'spree/shared/mini_glasse', :locals => { :product => get_glasses_on_env('Baba') } %>
 
@@ -27,38 +33,48 @@
     </a>
 
     <a href="/t/univers/fashion-girl" title="Univers Fashion Girl">
-    <span class="univers">
-      <%= image_tag 'slider/universfashion-200.png', :title => 'Univers Fashion', :id => 'people' %>
-      <div id="mask" style="background-color : rgba(244,207,151, 0.95)">
-	<div id="content">
-	  <h3>Fashion Girl</h3>
-	  <p>
-	    On peut vous définir par <br/> <i>"La mode se démode, le style jamais."</i>
-	  </p>
+      <span class="univers">
+	<%= image_tag 'slider/universfashion-200.png', :title => 'Univers Fashion', :id => 'people' %>
+	<div id="mask" style="background-color : rgba(244,207,151, 0.95)">
+	  <div id="content">
+	    <h3>Fashion Girl</h3>
+	    <p>
+	      On peut vous définir par <i>"La mode se démode, le style jamais."</i>
+	    </p>
 
+	    <div style="position:relative;">
+	      <div style="position : absolute; top : -27px; left : 98px; " class="fb-like" data-href="https://www.facebook.com/pages/Beliview-Fashion/353244918062086" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+	    </div>
+	    
 	    <%= render :partial => 'spree/shared/mini_glasse', :locals => { :product => get_glasses_on_env('Fashion Girl') } %>
-
+	    
+	  </div>
 	</div>
-      </div>
-    </span>
-
-    <a href="/t/univers/student-style" title="Univers Student Style">
-    <span class="univers">
-      <%= image_tag 'slider/universetudiante-200.png', :title => 'Univers Étudiante', :id => 'people' %>
-      <div id="mask" style="background-color : rgba(161,160,160, 0.95)">
-	<div id="content">
-	  <h3>Student Style</h3>
-	  <p>
-	    Étudiante mais stylée, vous incarnez le parfait équilibre entre l'intellect et le style.
-	  </p>
-
-	    <%= render :partial => 'spree/shared/mini_glasse', :locals => { :product => get_glasses_on_env('Student Style') } %>
-
-	</div>
-      </div>
-    </span>
+      </span>
     </a>
+    
+    <a href="/t/univers/student-style" title="Univers Student Style">
+      <span class="univers">
+	<%= image_tag 'slider/universetudiante-200.png', :title => 'Univers Étudiante', :id => 'people' %>
+	<div id="mask" style="background-color : rgba(161,160,160, 0.95)">
+	  <div id="content">
+	    <h3>Student Style</h3>
+	    <p>
+	      Vous incarnez le parfait équilibre entre l'intellect et le style.
+	    </p>
 
+	    <div style="position:relative;">
+	      <div style="z-index : 99999; position : absolute; top : -27px; left : 98px; " class="fb-like" data-href="https://www.facebook.com/pages/Beliview-Student-Style/134439960024409" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+	    </div>
+
+	    
+	    <%= render :partial => 'spree/shared/mini_glasse', :locals => { :product => get_glasses_on_env('Student Style') } %>
+	    
+	  </div>
+	</div>
+      </span>
+    </a>
+    
 
     <a href="/t/univers/trendy" title="Univers Trendy">
       <span class="univers">

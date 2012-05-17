@@ -39,6 +39,11 @@ namespace :spree do
       p.delete
     end
 
+    
+    Spree::Property.all.each { |p| p.delete }    
+    Spree::ProductProperty.all.each { |p| p.delete }
+
+
     puts "Creating Taxonomy"
 
     
@@ -54,15 +59,26 @@ namespace :spree do
 
     # puts categories
     puts "Creating product"
-    
-    #limit = 50
+
+
+    brand_prop = Spree::Property.find_or_create_by_name_and_presentation("brand", "Marque")
+    color_prop = Spree::Property.find_or_create_by_name_and_presentation("color", "Couleur")
+    shape_prop = Spree::Property.find_or_create_by_name_and_presentation("shape", "Forme")
+
+    taxonomy = Spree::Taxonomy.create(:name => 'Univers')
+    taxon_last_id = Spree::Taxon.last.id
+
+    parent_taxon = Spree::Taxon.create(:parent_id => taxon_last_id, :name => 'All')    
+
+    limit = 50
     
     CSV.foreach("#{Rails.root}/lib/data/products.csv", {:col_sep => ";"}) do |row|
 
-      # limit -= 1
-      # if limit == 0
-      #   break
-      # end
+      limit -= 1
+      if limit == 0
+        break
+      end
+
       #puts row[2].split(' - ', 2)[1].gsub('/', '')
       next if row[2].nil?
 
@@ -84,7 +100,9 @@ namespace :spree do
              :description => row[22],
              :sku => row[12]
         
+        prod.taxons << parent_taxon
         prod.save
+
         prod_v = Spree::Variant.last
         # #           prod.taxons << categories[row[3]]["taxon"]
         # begin
@@ -98,13 +116,24 @@ namespace :spree do
         
         prod_v.images << Spree::Image.create(:attachment => File.open(path), :alt => row[2])
       end
+
+      if !row[15].nil?
+        Spree::ProductProperty.create({:property => brand_prop, :product => prod, :value => row[15]}, :without_protection => true)
+      end
+
+      if !row[38].nil?
+        Spree::ProductProperty.create({:property => color_prop, :product => prod, :value => row[38]}, :without_protection => true)
+      end
+
+      if !row[50].nil?
+        Spree::ProductProperty.create({:property => shape_prop, :product => prod, :value => row[50]}, :without_protection => true)
+      end
+      
       
       
       
     end
 
-    taxonomy = Spree::Taxonomy.create(:name => 'Univers')
-    taxon_last_id = Spree::Taxon.last.id
 
     baba = Spree::Taxon.create(:parent_id => taxon_last_id, :name => 'Baba')
     fashion = Spree::Taxon.create(:parent_id => taxon_last_id, :name => 'Fashion Girl')
@@ -124,8 +153,9 @@ namespace :spree do
     end
     
     
-    
-    
+    require('fileutils')
+    FileUtils.rm_r('public/system/products')    
+    FileUtils.mv('public/spree/products', 'public/system')
     #Spree::Taxon.all
 
     
@@ -148,7 +178,7 @@ end
       # 23 = tags Métal,Marron,femme,Agnès B.
       # 33 = image row[33]["http://hec1.pastorino.me/images/"] = ""
       # 38 = color
-      # 39 = oui/non ?
+# 39 = oui/non ?
       # 40 = oui/non ?
       # 41 <-> 43 = sexe/style/type
       # 42 = style de lunette
