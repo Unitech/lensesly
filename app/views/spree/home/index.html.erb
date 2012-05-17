@@ -1,6 +1,6 @@
 
 <% content_for :javascripts do %>
-  <%= javascript_include_tag 'store/home' %>
+  <%#= javascript_include_tag 'store/home' %>
 <% end %>
 
 <% @layout_override = true %>
@@ -135,8 +135,8 @@
 	<p>
 	  Recevez tous les mois des conseils de stylistes reconnus gratuitement !
 
-	  <%= form_for @newsletter, :url => '/newsletters/create' do |f| %>
-	  <%= f.email_field :mail %>
+	  <%= form_for :newsletter, :url => '/newsletters/create' do |f| %>
+	  <%= f.email_field :mail, :placeholder => 'Ici votre mail' %>
 	  <%= f.submit "Je m'inscris" %>
 <% end %>
 	</p>

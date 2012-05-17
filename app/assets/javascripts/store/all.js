@@ -17,3 +17,4 @@
 //= require store/admin
 
 //= require store/common
+//= require store/home
