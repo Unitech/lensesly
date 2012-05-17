@@ -30,4 +30,7 @@ class ContentController < Spree::BaseController
     @title = 'Concours de beauté BeliView'
   end
 
+  def pupilaire
+    @title = 'Mesurer l\'ecart pupilaire'
+  end
 end

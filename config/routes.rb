@@ -13,6 +13,7 @@ Lensesly::Application.routes.draw do
     get '/concours' => :concours
     get '/mentions' => :mention
     get '/conditions-generales' => :conditions
+    get '/ecart-pupillaire' => :pupilaire
   end
 
   scope :controller => :beauty_controller, :path => '/beauty' do
