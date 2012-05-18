@@ -5,33 +5,46 @@
   <%= image_tag 'logo-miss.png' %>
   <br/>
   <div id="concours">
+    <% if !defined?(@validated) %>
     <p>
-      Tenez vous prêtes pour le lancement du concours mensuel Beliview ! 
-      <br/>
-      Inscrivez-vous en avant-première pour être tenues au courant de l'évènement.
-    </p>
-
-    <p>
-      <%= form_for :beauty_competition, :url => '/beauty/create' do |f| %>	
-      <%= f.label :f_name,  "Prénom" %>
-      <br/>
-      <%= f.text_field :f_name %>
-      <br/>
-      <%= f.label :l_name,  "Nom" %>
-      <br/>
-      <%= f.text_field :l_name %>
-      <br/>
-      <%= f.label :mail,  "Email" %>
-      <br/>
-      <%= f.text_field :mail %>
-      <br/>
-      <%= f.label :number,  "Numéro de téléphone" %>
-      <br/>
-      <%= f.text_field :number %>
+      Participez au concours MissBeliview !
       <br/><br/>
-      <%= f.submit "Envoyer" %>
-      <% end %>
+      Envoyez votre candidature ici ou sur Instagram avec le hashtag #MissBeliview ou encore sur Twitter avec #MissBeliview !
+      <br/><br/>
+      Un book offert par un photographe professionnel à la gagnante lundi 21 au soir !
     </p>
+    <hr/>
+    
+      <p>
+	<%= form_for @beauty_competition, :url => '/beauty/create' do |f| %>	
+	<%= f.label :f_name,  "Prénom" %>
+	<br/>
+	<%= f.text_field :f_name %>
+	<br/>
+	<%= f.label :l_name,  "Nom" %>
+	<br/>
+	<%= f.text_field :l_name %>
+	<br/>
+	<%= f.label :mail,  "Email" %>
+	<br/>
+	<%= f.text_field :mail %>
+	<br/>
+	<%= f.label :number,  "Numéro de téléphone" %>
+	<br/>
+	<%= f.text_field :number %>
+	<br/>
+	<%= f.label :photo,  "Votre photo" %>
+	<br/>      <br/>
+	<center>
+	  <%= f.file_field :photo %>
+	</center>
+	<br/><br/>
+	<%= f.submit "Envoyer" %>
+    <% end %>
+</p>
+<% else %>
+  Merci votre inscription est validée !
+  <% end %>
 
   </div>
 
@@ -74,6 +87,8 @@ new TWTR.Widget({
   }
 }).render().start();
 </script>
+
+
 
 
 </center>

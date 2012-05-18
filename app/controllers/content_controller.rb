@@ -28,6 +28,7 @@ class ContentController < Spree::BaseController
   
   def concours
     @title = 'Concours de beauté BeliView'
+    @beauty_competition = BeautyCompetition.new
   end
 
   def pupilaire

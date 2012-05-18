@@ -10,14 +10,14 @@ Lensesly::Application.routes.draw do
     get '/aide' => :help, :as => :help
     get '/a-propos' => :about, :as => :aboute
     get '/contact' => :contact, :as => :contact
-    get '/concours' => :concours
+    get '/concours' => :concours, :as => :concours
     get '/mentions' => :mention
     get '/conditions-generales' => :conditions
     get '/ecart-pupillaire' => :pupilaire
   end
 
-  scope :controller => :beauty_controller, :path => '/beauty' do
-    get '/create' => :add_form
+  scope :controller => :beauty_competition, :path => '/beauty' do
+    post '/create' => :add_form
   end
 
   match '/conditions' => 'content#conditions', :as => :conditions
