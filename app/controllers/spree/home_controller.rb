@@ -4,11 +4,11 @@ module Spree
     respond_to :html
 
     def index
-      @searcher = Spree::Config.searcher_class.new(params)
-      @products = @searcher.retrieve_products.reverse_order
-      @newsletter = Newsletter.new
+      # @searcher = Spree::Config.searcher_class.new(params)
+      @products = Spree::Product.joins(:variants_including_master).find(:all, :order => 'price ASC', :limit => 20)
 
-      @trendy = Spree::Product.last
+      # @products = Product.find(:all, :limit => 20)
+      @newsletter = Newsletter.new
       
       respond_with(@products)
     end

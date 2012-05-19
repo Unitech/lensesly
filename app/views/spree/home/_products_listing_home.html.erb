@@ -1,0 +1,32 @@
+
+<% if products.empty? %>
+  <%= t(:no_products_found) %>
+<% elsif params.key?(:keywords) %>
+  <h6 class="search-results-title"><%= t(:search_results, :keywords => h(params[:keywords])) %></h6>
+<% end %>
+
+<% if products.any? %>
+<ul id="products" class="inline product-listing-home" data-hook>
+  <% products.each do |product| %>
+    <% if Spree::Config[:show_zero_stock_products] || product.has_stock? %>
+
+      <li id="product_<%= product.id %>" class="columns prod-el <%= cycle("alpha", "secondary", "", "omega secondary") %>" data-hook="products_list_item" itemscope itemtype="http://schema.org/Product">
+
+	  <%= render :partial => 'shared/mini_product_admin', :locals => {:product => product } %>
+
+          <div class="product-image">
+	    
+            <%= link_to large_image(product, :itemprop => "image", :width => '330', :height => '180'), product, :itemprop => 'url' %>
+	    
+	      
+	 	    
+          </div>
+          <%= link_to truncate(product.name, :length => 50), product, :class => 'info', :itemprop => "name", :title => product.name %>
+          <span class="price selling" itemprop="price"><%= number_to_currency product.price %></span>
+	</li>
+
+    <% end %>
+  <% end %>
+</ul>
+<% end %>
+
