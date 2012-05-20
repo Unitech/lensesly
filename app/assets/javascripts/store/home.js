@@ -10,7 +10,7 @@ $().ready(function() {
 	    self.hover(function(e) {
 		e.preventDefault();
 		$('#mask', $(this)).animate({'height':'358'}, 100);
-		$('#access-btn', $(this)).animate({'height':'115', 'line-height': '7.5'}, 100);
+		$('#access-btn', $(this)).animate({'height':'115', 'line-height': '8.5'}, 100);
 	    }, function(e) {
 		e.preventDefault();
 		$('#mask', $(this)).animate({'height':'260'}, 100);

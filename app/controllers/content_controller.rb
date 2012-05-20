@@ -34,4 +34,8 @@ class ContentController < Spree::BaseController
   def pupilaire
     @title = 'Mesurer l\'ecart pupilaire'
   end
+
+  def aide
+    @title = 'Aide'
+  end
 end

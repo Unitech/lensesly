@@ -679,7 +679,7 @@ fr:
   previous: Précédent
   price: Prix
   price_bucket: Price Bucket # Prix du seau ?
-  price_range : Interval de prix
+  price_range : Intervalle de prix
   price_with_vat_included: "%{price} (TTC)"
   problem_authorizing_card: "Problème d'autorisation de votre carte de crédit"
   problem_capturing_card: "Impossible d'utiliser votre carte de crédit"

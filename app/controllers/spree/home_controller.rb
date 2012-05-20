@@ -5,7 +5,9 @@ module Spree
 
     def index
       # @searcher = Spree::Config.searcher_class.new(params)
-      @products = Spree::Product.joins(:variants_including_master).find(:all, :order => 'price ASC', :limit => 20)
+      # @products = Spree::Product.joins(:variants_including_master).find(:all, :order => 'price ASC', :limit => 20)
+      @toto = Taxon.find_by_permalink!('univers/bonnes-affaires')      
+      @products = @toto.products
 
       # @products = Product.find(:all, :limit => 20)
       @newsletter = Newsletter.new
