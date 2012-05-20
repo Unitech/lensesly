@@ -5,19 +5,19 @@
     <%= submit_tag t(:search), :name => nil %>
   <% end %>
 
-  <%= form_for :newsletter, :url => '/newsletters/create' do |f| %>
+  <%= form_for :newsletter, :url => '/newsletters/create', :html => { :class => 'new_newsletter'} do |f| %>
   <%= f.email_field :mail, :placeholder => 'Recevez les conseils de nos stylistes' %>
   <%= f.submit "Je m'inscris" %>
 <% end %>
 
 </li>
 
-<li>
+<li style="float : right;">
   <div style="float : left;" class="fb-like" data-href="https://www.facebook.com/pages/Beliview/239096579527613" data-send="false" data-layout="button_count" data-width="110" data-show-faces="true" data-action="recommend" data-font="arial"></div>
   
   <span class="testodo">
     <a href="https://twitter.com/Beliview" class="twitter-follow-button" data-show-count="false" data-lang="fr">Suivez nous @Beliview</a>
-
+    
 
   </span>
 

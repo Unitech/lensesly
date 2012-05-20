@@ -161,8 +161,8 @@
 	<h3>Conseils de nos stylistes</h3>
 	<p>
 	  Recevez tous les mois des conseils de stylistes reconnus gratuitement !
-
-	  <%= form_for :newsletter, :url => '/newsletters/create' do |f| %>
+	  
+	  <%= form_for :newsletter, :url => '/newsletters/create', :html => { :class => 'new_newsletter'} do |f| %>
 	  <%= f.email_field :mail, :placeholder => 'Ici votre mail' %>
 	  <%= f.submit "Je m'inscris" %>
 <% end %>
